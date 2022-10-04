@@ -1,7 +1,8 @@
 import { Camera, CameraType } from 'expo-camera';
 import React, { useState, useEffect, useRef } from 'react';
 import * as MediaLibrary from 'expo-media-library';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import CameraButton from './CameraButton';
 import IconButton from './IconButton';
@@ -39,14 +40,44 @@ export default function App() {
   return (
     <View style={styles.container}>
       {/* {!Image ? ( */}
-        <Camera
-          style={styles.camera}
-          type={type}
-          flashMode={flash}
-          ref={cameraRef}
-        >
-           <CameraButton onPress={takePicture} />
-        </Camera>
+      <Camera
+        style={styles.camera}
+        type={type}
+        flashMode={flash}
+        ref={cameraRef}
+      >
+        <View style={styles.topIcons}>
+          <TouchableOpacity>
+            <Ionicons
+              name='repeat'
+              size={40}
+              color='white'
+              onPress={() => {
+                setType(
+                  type === CameraType.back ? CameraType.front : CameraType.back
+                );
+              }}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Ionicons
+              name={'flash'}
+              size={30}
+              color={
+                flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
+              }
+              onPress={() => {
+                setFlash(
+                  flash === Camera.Constants.FlashMode.off
+                    ? Camera.Constants.FlashMode.on
+                    : Camera.Constants.FlashMode.off
+                );
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+        <CameraButton onPress={takePicture} />
+      </Camera>
       {/* ) : (
         <Image source={{ uri: image }} style={styles.camera} />
       )}
@@ -67,16 +98,23 @@ export default function App() {
           <CameraButton onPress={takePicture} />
         )}
       </View> */}
-     </View> 
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: 'black',
     justifyContent: 'center',
   },
   camera: {
-    paddingBottom: '20%',
-    borderRadius: 20,
+    paddingBottom: '25%',
+  },
+  topIcons: {
+    flexDirection: 'row',
+    marginTop: '20%',
+    justifyContent: 'space-between',
+    paddingLeft: '5%',
+    paddingRight: '5%',
   },
 });
