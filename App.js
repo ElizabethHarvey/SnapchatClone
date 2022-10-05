@@ -6,6 +6,7 @@ import { navigationRef } from './navigation/rootNavigator';
 
 import HomeScreen from './screens/HomeScreen';
 import AppNavigator from './navigation/AppNavigator';
+import ModalApp from './components/SmileModal';
 
 
 const Stack = createNativeStackNavigator();

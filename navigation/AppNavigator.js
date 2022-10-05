@@ -18,26 +18,28 @@ export default function AppNavigator() {
           let iconName;
 
           if (route.name === 'Map') {
-            iconName = focused ? 'location' : 'location-outline';
+            iconName = focused ? 'location-outline' : 'location-outline';
             color = focused ? '#21c23e' : 'gray';
           } else if (route.name === 'Chat') {
-            iconName = focused ? 'chatbox' : 'chatbox-outline';
+            iconName = focused ? 'chatbox-outline' : 'chatbox-outline';
             color = focused ? '#3c9dde' : 'gray';
           } else if (route.name === 'Home') {
-            iconName = focused ? 'camera' : 'camera-outline';
+            iconName = focused ? 'camera-outline' : 'camera-outline';
             color = focused ? '#DEC20B' : 'gray';
           } else if (route.name === 'Stories') {
-            iconName = focused ? 'people' : 'people-outline';
+            iconName = focused ? 'people-outline' : 'people-outline';
             color = focused ? '#A020F0' : 'gray';
           } else if (route.name === 'Discover') {
-            iconName = focused ? 'play' : 'play-outline';
+            iconName = focused ? 'play-outline' : 'play-outline';
             color = focused ? '#FF0000' : 'gray';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: 'black',
+        tabBarStyle: {backgroundColor: 'black'},
+        tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: 'gray',
+
       })}
     >
       <Tab.Screen

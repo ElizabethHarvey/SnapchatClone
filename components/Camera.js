@@ -1,11 +1,20 @@
 import { Camera, CameraType } from 'expo-camera';
 import React, { useState, useEffect, useRef } from 'react';
-import * as MediaLibrary from 'expo-media-library';
+import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 import CameraButton from './CameraButton';
-import IconButton from './IconButton';
+import IconButton from './ExitIcon';
+import SmileModal from './SmileModal';
+import ImageModal from './ImageModal';
 
 export default function App() {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -16,7 +25,7 @@ export default function App() {
 
   useEffect(() => {
     (async () => {
-      MediaLibrary.requestPermissionsAsync();
+      MedialLibrary.requestPermissionsAsync();
       const cameraStatus = await Camera.requestCameraPermissionsAsync();
       setHasCameraPermission(cameraStatus.status === 'granted');
     })();
@@ -28,6 +37,18 @@ export default function App() {
         const data = await cameraRef.current.takePictureAsync();
         console.log(data);
         setImage(data.uri);
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  };
+
+  const savePicture = async () => {
+    if (image) {
+      try {
+        await MedialLibrary.createAssetAsync(image);
+        alert('Picture Saved!!');
+        setImage(null);
       } catch (e) {
         console.log(e);
       }
@@ -47,28 +68,40 @@ export default function App() {
         ref={cameraRef}
       >
         <View style={styles.topIcons}>
-          <TouchableOpacity>
-            <Ionicons name='search' size={30} color='white'/>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Ionicons
-              name={'flash'}
-              size={30}
-              color={
-                flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
-              }
-              onPress={() => {
-                setFlash(
-                  flash === Camera.Constants.FlashMode.off
-                    ? Camera.Constants.FlashMode.on
-                    : Camera.Constants.FlashMode.off
-                );
+          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+            <Image
+              style={styles.profilePic}
+              source={{
+                uri: 'http://images2.fanpop.com/image/photos/8600000/random-animals-animals-8675984-377-442.jpg',
               }}
             />
+            <TouchableOpacity style={{ marginLeft: '10%' }}>
+              <Ionicons name='search' size={30} color='white' />
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity>
+            <View> 
+              <Ionicons
+                size={29}
+                color={
+                  flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
+                }
+                name={
+                  flash === Camera.Constants.FlashMode.off ? 'flash-off' : 'flash'
+                }
+                onPress={() => {
+                  setFlash(
+                    flash === Camera.Constants.FlashMode.off
+                      ? Camera.Constants.FlashMode.on
+                      : Camera.Constants.FlashMode.off
+                  );
+                }}
+              />
+            </View>
             <Ionicons
-            style={styles.flipIcon}
+              style={styles.flipIcon}
               name='git-compare'
-              size={30}
+              size={29}
               color='white'
               onPress={() => {
                 setType(
@@ -78,7 +111,21 @@ export default function App() {
             />
           </TouchableOpacity>
         </View>
-        <CameraButton onPress={takePicture} />
+        <View
+          style={{
+            flexDirection: 'row-reverse',
+            justifyContent: 'center',
+            marginTop: '127%',
+          }}
+        >
+          <TouchableOpacity style={styles.happy}>
+            <SmileModal />
+          </TouchableOpacity>
+          <CameraButton onPress={takePicture} />
+          <TouchableOpacity style={styles.images}>
+            <ImageModal />
+          </TouchableOpacity>
+        </View>
       </Camera>
       {/* ) : (
         <Image source={{ uri: image }} style={styles.camera} />
@@ -94,7 +141,11 @@ export default function App() {
             }}
           >
             <IconButton icon='sync' title={'Re-take'} />
-            <IconButton icon='checkmark' title={'Save'} />
+            <IconButton
+              icon='checkmark-outline'
+              title={'Save'}
+              onPress={savePicture}
+            />
           </View>
         ) : (
           <CameraButton onPress={takePicture} />
@@ -110,16 +161,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   camera: {
-    paddingBottom: '25%',
+    paddingBottom: '10%',
   },
   topIcons: {
     flexDirection: 'row',
-    marginTop: '20%',
+    marginTop: '15%',
     justifyContent: 'space-between',
+    alignItems: 'flex-start',
     paddingLeft: '5%',
     paddingRight: '5%',
   },
   flipIcon: {
     paddingTop: '5%',
-  }
+  },
+  happy: {
+    marginTop: '12%',
+    flexDirection: 'row',
+  },
+  images: {
+    paddingRight: '5%',
+    marginTop: '12%',
+    flexDirection: 'row',
+  },
+  profilePic: {
+    width: 50,
+    height: 50,
+    borderRadius: '100%',
+  },
 });
