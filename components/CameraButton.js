@@ -17,7 +17,7 @@ function CameraButton({ onPress }) {
 const styles = StyleSheet.create({
   ellipse: {
     alignItems: 'center',
-    marginTop: '135%',
+    marginTop: '125%',
   },
 
 });

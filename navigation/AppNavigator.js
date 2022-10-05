@@ -25,7 +25,7 @@ export default function AppNavigator() {
             color = focused ? '#3c9dde' : 'gray';
           } else if (route.name === 'Home') {
             iconName = focused ? 'camera' : 'camera-outline';
-            color = focused ? '#FFFF00' : 'gray';
+            color = focused ? '#DEC20B' : 'gray';
           } else if (route.name === 'Stories') {
             iconName = focused ? 'people' : 'people-outline';
             color = focused ? '#A020F0' : 'gray';

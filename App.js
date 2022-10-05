@@ -7,6 +7,7 @@ import { navigationRef } from './navigation/rootNavigator';
 import HomeScreen from './screens/HomeScreen';
 import AppNavigator from './navigation/AppNavigator';
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

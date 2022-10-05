@@ -2,7 +2,7 @@ import { Camera, CameraType } from 'expo-camera';
 import React, { useState, useEffect, useRef } from 'react';
 import * as MediaLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 import CameraButton from './CameraButton';
 import IconButton from './IconButton';
@@ -48,16 +48,7 @@ export default function App() {
       >
         <View style={styles.topIcons}>
           <TouchableOpacity>
-            <Ionicons
-              name='repeat'
-              size={40}
-              color='white'
-              onPress={() => {
-                setType(
-                  type === CameraType.back ? CameraType.front : CameraType.back
-                );
-              }}
-            />
+            <Ionicons name='search' size={30} color='white'/>
           </TouchableOpacity>
           <TouchableOpacity>
             <Ionicons
@@ -71,6 +62,17 @@ export default function App() {
                   flash === Camera.Constants.FlashMode.off
                     ? Camera.Constants.FlashMode.on
                     : Camera.Constants.FlashMode.off
+                );
+              }}
+            />
+            <Ionicons
+            style={styles.flipIcon}
+              name='git-compare'
+              size={30}
+              color='white'
+              onPress={() => {
+                setType(
+                  type === CameraType.back ? CameraType.front : CameraType.back
                 );
               }}
             />
@@ -117,4 +119,7 @@ const styles = StyleSheet.create({
     paddingLeft: '5%',
     paddingRight: '5%',
   },
+  flipIcon: {
+    paddingTop: '5%',
+  }
 });
