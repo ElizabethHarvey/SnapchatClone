@@ -68,44 +68,48 @@ export default function App() {
         ref={cameraRef}
       >
         <View style={styles.topIcons}>
-          <View style={{ flexDirection: 'row', alignItems: 'center', }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Image
               style={styles.profilePic}
               source={{
-                uri: 'http://images2.fanpop.com/image/photos/8600000/random-animals-animals-8675984-377-442.jpg',
+                uri: 'https://helios-i.mashable.com/imagery/articles/04tV2ASy4BKViKIw4pPBuMi/hero-image.fill.size_1200x1200.v1623368074.jpg',
               }}
             />
             <TouchableOpacity style={{ marginLeft: '10%' }}>
               <Ionicons name='search' size={30} color='white' />
             </TouchableOpacity>
+            <TouchableOpacity style={{ marginLeft: '55%' }}>
+              <Ionicons name='person-add' size={30} color='white' />
+            </TouchableOpacity>
           </View>
           <TouchableOpacity>
-            <View> 
+            <View style={{ marginTop: '35%'}}>
               <Ionicons
+                name='git-compare'
                 size={29}
-                color={
-                  flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
-                }
-                name={
-                  flash === Camera.Constants.FlashMode.off ? 'flash-off' : 'flash'
-                }
+                color='white'
                 onPress={() => {
-                  setFlash(
-                    flash === Camera.Constants.FlashMode.off
-                      ? Camera.Constants.FlashMode.on
-                      : Camera.Constants.FlashMode.off
+                  setType(
+                    type === CameraType.back
+                      ? CameraType.front
+                      : CameraType.back
                   );
                 }}
               />
             </View>
             <Ionicons
-              style={styles.flipIcon}
-              name='git-compare'
               size={29}
-              color='white'
+              color={
+                flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
+              }
+              name={
+                flash === Camera.Constants.FlashMode.off ? 'flash-off' : 'flash'
+              }
               onPress={() => {
-                setType(
-                  type === CameraType.back ? CameraType.front : CameraType.back
+                setFlash(
+                  flash === Camera.Constants.FlashMode.off
+                    ? Camera.Constants.FlashMode.on
+                    : Camera.Constants.FlashMode.off
                 );
               }}
             />
