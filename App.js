@@ -14,7 +14,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Home' component={AppNavigator} options={{
+        <Stack.Screen name='Chat' component={AppNavigator} options={{
                 headerShown: false,
               }}/>
       </Stack.Navigator>

@@ -12,9 +12,9 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName='Home'
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color, size }) => {
+      initialRouteName='Chat'
+      screenOptions={({ route, }) => ({
+        tabBarIcon: ({ focused, color, size, textColor }) => {
           let iconName;
 
           if (route.name === 'Map') {
@@ -38,7 +38,8 @@ export default function AppNavigator() {
         },
         tabBarStyle: {backgroundColor: 'black'},
         tabBarActiveTintColor: 'white',
-        tabBarInactiveTintColor: 'gray',
+        tabBarInactiveTintColor: 'black',
+
 
       })}
     >

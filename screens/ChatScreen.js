@@ -1,12 +1,18 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-const ChatScreen = () => {
+function ChatScreen(props) {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>ChatScreen</Text>
     </View>
-  )
+  );
 }
 
-export default ChatScreen
+const styles = StyleSheet.create({
+  container: {
+    align
+  },
+});
+
+export default ChatScreen;
