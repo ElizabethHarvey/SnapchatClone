@@ -1,12 +1,21 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+ 
+import StoriesHeader from '../components/StoriesHeader';
 
-const StoriesScreen = () => {
+function StoriesScreen(props) {
   return (
-    <View>
-      <Text>StoriesScreen</Text>
-    </View>
-  )
+    <SafeAreaView style={styles.container}>
+      <StoriesHeader />
+    </SafeAreaView>
+  );
 }
 
-export default StoriesScreen
+const styles = StyleSheet.create({
+  container: {
+
+  },
+});
+
+export default StoriesScreen;
