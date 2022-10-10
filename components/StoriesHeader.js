@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-function Header(props) {
+function StoriesHeader(props) {
   return (
     <View style={styles.topIcons}>
         <Image
@@ -11,15 +11,15 @@ function Header(props) {
             uri: 'https://helios-i.mashable.com/imagery/articles/04tV2ASy4BKViKIw4pPBuMi/hero-image.fill.size_1200x1200.v1623368074.jpg',
           }}
         />
-        <TouchableOpacity style={{ right: '63%' }}>
+        <TouchableOpacity style={{ right: '50%' }}>
           <Ionicons name='search' size={30} color='gray' />
         </TouchableOpacity>
-        <Text style={styles.text}>Chat</Text>
-        <TouchableOpacity style={{ left: '63%'}}>
+        <Text style={styles.text}>Stories</Text>
+        <TouchableOpacity style={{ left: '50%'}}>
           <Ionicons name='person-add' size={30} color='gray' />
         </TouchableOpacity>
       <TouchableOpacity>
-        <Ionicons name='create' size={33} color='gray' />
+        <Ionicons name='ellipsis-horizontal' size={33} color='gray' />
       </TouchableOpacity>
     </View>
   );
@@ -46,4 +46,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Header;
+export default StoriesHeader;
