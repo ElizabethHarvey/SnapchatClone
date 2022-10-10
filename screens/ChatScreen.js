@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import Header from '../components/Header';
+import Header from '../components/ChatHeader';
 import MessageList from '../components/MessageList';
 
 function ChatScreen(props) {
