@@ -75,15 +75,15 @@ export default function App() {
                 uri: 'https://helios-i.mashable.com/imagery/articles/04tV2ASy4BKViKIw4pPBuMi/hero-image.fill.size_1200x1200.v1623368074.jpg',
               }}
             />
-            <TouchableOpacity style={{ marginLeft: '10%' }}>
+            <TouchableOpacity style={{ marginLeft: '4%' }}>
               <Ionicons name='search' size={30} color='white' />
             </TouchableOpacity>
-            <TouchableOpacity style={{ marginLeft: '55%' }}>
+            <TouchableOpacity style={{ marginLeft: '61%' }}>
               <Ionicons name='person-add' size={30} color='white' />
             </TouchableOpacity>
           </View>
           <TouchableOpacity>
-            <View style={{ marginTop: '35%'}}>
+            <View style={{ marginTop: '35%',}}>
               <Ionicons
                 name='git-compare'
                 size={29}
@@ -174,9 +174,6 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     paddingLeft: '5%',
     paddingRight: '5%',
-  },
-  flipIcon: {
-    paddingTop: '5%',
   },
   happy: {
     marginTop: '12%',
