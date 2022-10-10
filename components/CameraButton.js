@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 function CameraButton({ onPress }) {
   return (
-    <TouchableOpacity  style={styles.ellipse} onPress={onPress}>
+    <TouchableOpacity onPress={onPress}>
       <Ionicons
         name='ellipse-outline'
         size={120}
@@ -13,9 +13,5 @@ function CameraButton({ onPress }) {
     </TouchableOpacity>
   );
 }
-
-const styles = StyleSheet.create({
-
-});
 
 export default CameraButton;
