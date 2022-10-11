@@ -5,6 +5,7 @@ import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import ImageModal from '../components/ImageModal';
+import SmileModal from '../components/SmileModal';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -149,7 +150,7 @@ export default function HomeScreen({ navigation }) {
               <ImageModal />
             </TouchableOpacity>
             <TouchableOpacity style={styles.happy}>
-              <ImageModal />
+             <ImageModal />
             </TouchableOpacity>
           </View>
         )}

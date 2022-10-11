@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import SmileHomeButton from './SmileHomeButton';
+import SmileHomeButton from './SmileIcon';
 import IconButton from './ExitIcon';
 import ExitIcon from './ExitIcon';
 import ImageIcon from './ImageIcon';
