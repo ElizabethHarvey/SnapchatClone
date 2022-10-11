@@ -9,11 +9,11 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+
 import SmileHomeButton from './SmileHomeButton';
-import IconButton from './ExitIcon';
 import ExitIcon from './ExitIcon';
 
-const HomeModal = () => {
+const HappyModal = () => {
   const [modalVisible, setModalVisible] = useState(false);
   return (
     <View style={styles.centeredView}>
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeModal;
+export default HappyModal;
