@@ -26,9 +26,9 @@ const MessageRow = ({ image, streak, name, textColor, title, iconName, time, ico
           <Text style={{ color:textColor ,}}>{title}</Text>
           <Text style={{ color: 'darkgray', fontWeight: '800' }}> • {time} • </Text>
           <Text>{streak} 🔥</Text>
-            <Text>{smile}</Text>
         </View>
       </View>
+            <Text style={styles.smile}>{smile}</Text>
     </TouchableOpacity>
   );
 };
@@ -57,6 +57,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     left: '15%',
   },
+  smile: {
+    left: '100%',
+    position: 'absolute',
+    fontSize: '25%',
+    alignSelf: 'center',
+  }
 });
 
 export default MessageRow;

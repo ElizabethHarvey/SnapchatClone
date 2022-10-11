@@ -24,7 +24,9 @@ const MessageList = (props) => {
       IconName: 'square',
       IconColor: 'purple',
       textColor: 'purple',
-      time: '20m'
+      time: '20m',
+      smile:'😊'
+
     },
     {
       id: 3,
@@ -47,6 +49,8 @@ const MessageList = (props) => {
       IconColor: 'red',
       textColor: 'grey',
       time: '5m',
+      smile:'😊'
+
     },
     {
       id: 5,
@@ -58,6 +62,7 @@ const MessageList = (props) => {
       IconColor: 'purple',
       textColor: 'grey',
       time: '5m',
+      smile:'😊'
     },
     {
       id: 6,
@@ -91,6 +96,8 @@ const MessageList = (props) => {
       IconColor: 'purple',
       textColor: 'grey',
       time: '40m',
+      smile:'😊'
+
     },
     {
       id: 9,
@@ -112,6 +119,8 @@ const MessageList = (props) => {
       IconColor: 'lightblue',
       textColor: 'grey',
       time: '5m',
+      smile:'😊'
+
     },
   ];
 
@@ -131,6 +140,7 @@ const MessageList = (props) => {
             iconColor={item.IconColor}
             textColor={item.textColor}
             time={item.time}
+            smile={item.smile}
           />
         )}
       />
