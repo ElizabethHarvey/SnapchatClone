@@ -8,7 +8,7 @@ function StoriesHeader(props) {
         <Image
           style={styles.profilePic}
           source={{
-            uri: 'https://helios-i.mashable.com/imagery/articles/04tV2ASy4BKViKIw4pPBuMi/hero-image.fill.size_1200x1200.v1623368074.jpg',
+            uri: 'https://picsum.photos/200/300',
           }}
         />
         <TouchableOpacity style={{ right: '50%' }}>
