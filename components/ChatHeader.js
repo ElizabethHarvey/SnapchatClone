@@ -11,29 +11,29 @@ function Header(props) {
             uri: 'https://picsum.photos/200/300',
           }}
         />
-        <TouchableOpacity style={{ right: '63%' }}>
-          <Ionicons name='search' size={30} color='gray' />
+        <TouchableOpacity style={styles.search}>
+          <Ionicons name='search-outline' size={30} color='#5A5A5A' />
         </TouchableOpacity>
         <Text style={styles.text}>Chat</Text>
-        <TouchableOpacity style={{ left: '63%'}}>
-          <Ionicons name='person-add' size={30} color='gray' />
+        <TouchableOpacity style={styles.person}>
+          <Ionicons name='person-add' size={30} color='#5A5A5A' />
         </TouchableOpacity>
-      <TouchableOpacity>
-        <Ionicons name='create' size={33} color='gray' />
+      <TouchableOpacity style={styles.create}>
+        <Ionicons name='create' size={33} color='#5A5A5A' />
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-
   text: {
     fontSize: 25,
     fontWeight: 'bold',
+    right: '350%'
   },
   topIcons: {
     flexDirection: 'row',
-    top: '1%',
+    bottom: '1%',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingLeft: '5%',
@@ -43,6 +43,37 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: '100%',
+  },
+  search: {
+    right: '63%',
+    borderRadius: '100%',
+    width: 45,
+    height: 45,
+    position: 'absolute',
+    left: '22%',
+    backgroundColor: '#E7E6E6',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  person: {
+    left: '80%',
+    borderRadius: '100%',
+    width: 45,
+    height: 45,
+    position: 'absolute',
+    backgroundColor: '#E7E6E6',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  create: {
+    left: '95%',
+    borderRadius: '100%',
+    width: 45,
+    height: 45,
+    position: 'absolute',
+    backgroundColor: '#E7E6E6',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
