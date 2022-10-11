@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen';
 import AppNavigator from './navigation/AppNavigator';
+import MyBitmoji from './components/MyBitmoji';
 
 
 const Stack = createNativeStackNavigator();
