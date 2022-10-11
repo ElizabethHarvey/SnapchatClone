@@ -19,7 +19,7 @@ function MapHeader({ title }) {
       <TouchableOpacity style={styles.person}>
         <Ionicons name='person-add' size={30} color='white' />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.create}>
+      <TouchableOpacity style={styles.cog}>
         <Ionicons name='cog-outline' size={33} color='white' />
       </TouchableOpacity>
     </View>
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     width: 45,
     height: 45,
     position: 'absolute',
-    left: '20%',
+    left: '22%',
     backgroundColor: 'lightgray',
     alignItems: 'center',
     justifyContent: 'center',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  create: {
+  cog: {
     left: '95%',
     borderRadius: '100%',
     width: 45,
