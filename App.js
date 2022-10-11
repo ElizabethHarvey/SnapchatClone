@@ -5,7 +5,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import HomeScreen from './screens/HomeScreen';
 import AppNavigator from './navigation/AppNavigator';
-import ModalApp from './components/HappModal';
 
 
 const Stack = createNativeStackNavigator();

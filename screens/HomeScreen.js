@@ -5,8 +5,7 @@ import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import ImageModal from '../components/ImageModal';
-import SmileModal from '../components/HappModal';
-import HappyModal from '../components/HappModal';
+import HappyModal from '../components/HappyModal';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
