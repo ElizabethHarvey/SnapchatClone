@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName='Chat'
+      initialRouteName='Home'
       screenOptions={({ route, }) => ({
         tabBarIcon: ({ focused, color, size, textColor }) => {
           let iconName;
