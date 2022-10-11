@@ -1,12 +1,27 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import MapView, { Marker } from 'react-native-maps';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MapHeader from '../components/MapHeader';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-const MapScreen = () => {
+function MapScreen() {
   return (
-    <View>
-      <Text>MapScreen</Text>
-    </View>
-  )
+    <SafeAreaView>
+      <MapHeader title='Ocean' />
+      <MapView
+        mapType={'standard'}
+        zoomEnabled={true}
+        scrollEnabled={true}
+        showsScale={true}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <Marker coordinate={{ latitude: 30.4543, longitude: -22.5479 }} />
+      </MapView>
+    </SafeAreaView>
+  );
 }
 
-export default MapScreen
+const styles = StyleSheet.create({});
+
+export default MapScreen;
