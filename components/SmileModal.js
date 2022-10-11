@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import SmileIcon from './SmileIcon';
+import SmileHomeButton from './SmileIcon';
 import ExitIcon from './ExitIcon';
 
 const SmileModal = () => {
