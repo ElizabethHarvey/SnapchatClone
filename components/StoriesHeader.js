@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingLeft: '5%',
     paddingRight: '5%',
+    marginBottom: '3%',
   },
   profilePic: {
     width: 50,
