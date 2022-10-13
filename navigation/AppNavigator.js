@@ -12,24 +12,24 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName='Home'
+      initialRouteName='⋆'
       screenOptions={({ route, }) => ({
         tabBarIcon: ({ focused, color, size, textColor }) => {
           let iconName;
 
-          if (route.name === 'Map') {
+          if (route.name === '‧') {
             iconName = focused ? 'location-outline' : 'location-outline';
             color = focused ? '#21c23e' : 'gray';
-          } else if (route.name === 'Chat') {
+          } else if (route.name === '·') {
             iconName = focused ? 'chatbox-outline' : 'chatbox-outline';
             color = focused ? '#3c9dde' : 'gray';
-          } else if (route.name === 'Home') {
+          } else if (route.name === '⋆') {
             iconName = focused ? 'camera-outline' : 'camera-outline';
             color = focused ? '#DEC20B' : 'gray';
-          } else if (route.name === 'Stories') {
+          } else if (route.name === '◦') {
             iconName = focused ? 'people-outline' : 'people-outline';
             color = focused ? '#A020F0' : 'gray';
-          } else if (route.name === 'Discover') {
+          } else if (route.name === '◌') {
             iconName = focused ? 'play-outline' : 'play-outline';
             color = focused ? '#FF0000' : 'gray';
           }
@@ -42,35 +42,35 @@ export default function AppNavigator() {
       })}
     >
       <Tab.Screen
-        name='Map'
+        name='‧'
         component={MapScreen}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='Chat'
+        name='·'
         component={ChatScreen}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='Home'
+        name='⋆'
         component={HomeScreen}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='Stories'
+        name='◦'
         component={StoriesScreen}
         options={{
           headerShown: false,
         }}
       />
       <Tab.Screen
-        name='Discover'
+        name='◌'
         component={DiscoverScreen}
         options={{
           headerShown: false,
