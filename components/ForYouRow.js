@@ -28,26 +28,28 @@ const ForYouRow = ({ image, title, time }) => {
 const styles = StyleSheet.create({
   row: {
     padding: '0.5%',
-    marginBottom:'30%'
+    marginBottom: '1.5%',
   },
   image: {
-    width: 190,
-    height: 350,
+    width: 200,
+    height: 275,
     borderRadius: '10%',
-    left: '10%',
+    left: '5%',
   },
   name: {
-    left: '15%',
+    left: '8%',
     fontSize: 15,
     color: 'white',
     fontWeight: 'bold',
     position: 'absolute',
-    top: '17%',
+    top: '85%',
   },
   time: {
     fontSize: 15,
     color: 'gray',
     position: 'absolute',
+    left: '8%',
+    bottom: '10%',
   },
   star: {
     color: 'yellow',
