@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
     padding: '0.2%',
   },
   image: {
-    width: 130,
-    height: 200,
+    width: 150,
+    height: 250,
     borderRadius: '10%',
     left: '10%',
   },
