@@ -1,9 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, Text, FlatList, Platform } from 'react-native';
+import {  View, FlatList } from 'react-native';
 import FriendsRow from './FriendsRow';
-import MessageRow from './MessageRow';
 
-const MessageList = (props) => {
+
+const FriendsList = (props) => {
   const DUMMY_DATA = [
     {
       id: 1,
@@ -78,4 +78,4 @@ const MessageList = (props) => {
   );
 };
 
-export default MessageList;
+export default FriendsList;

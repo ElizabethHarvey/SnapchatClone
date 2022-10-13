@@ -1,25 +1,19 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  Image,
-  SafeAreaView,
-  ScrollView,
-} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const FriendsRow = ({ image, name, lock }) => {
   return (
-    <TouchableOpacity style={styles.row}>
-      <View style={styles.profile}>
-        <Image style={styles.image} source={{ uri: image }} />
-      </View>
-      <Ionicons style={styles.lock} name={lock} size='16' color='#AD4EC9' />
+    <View>
+      <TouchableOpacity style={styles.row}>
+        <View style={styles.profile}>
+          <Image style={styles.image} source={{ uri: image }} />
+        </View>
+        <Ionicons style={styles.lock} name={lock} size='16' color='#AD4EC9' />
         <Text style={styles.name}>{name}</Text>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   );
 };
 
@@ -27,7 +21,7 @@ const styles = StyleSheet.create({
   row: {
     alignItems: 'center',
     height: 80,
-    marginBottom: '30%',
+    marginBottom: 30,
     padding: '1%',
     left: '10%',
   },
@@ -51,9 +45,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   lock: {
-  bottom: '9%',
-  backgroundColor: '#E7E6E6',
-  }
+    bottom: '9%',
+    backgroundColor: '#E7E6E6',
+  },
 });
 
 export default FriendsRow;

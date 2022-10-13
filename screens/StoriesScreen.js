@@ -1,6 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  SafeAreaView,
+} from 'react-native';
 
 import StoriesHeader from '../components/StoriesHeader';
 import FriendsList from '../components/FriendsList';
@@ -11,15 +17,17 @@ function StoriesScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <StoriesHeader />
-      <Text style={styles.text}>Friends</Text>
-      <FriendsList />
-      <TouchableOpacity style={{ flexDirection: 'row' }}>
-        <Text style={styles.subText}>Subscriptions</Text>
-        <Text style={styles.arrowHead}>{' >'}</Text>
-      </TouchableOpacity>
-      <SubscriptionList />
+      <ScrollView>
+        <Text style={styles.text}>Friends</Text>
+        <FriendsList />
+        <TouchableOpacity style={{ flexDirection: 'row' }}>
+          <Text style={styles.subText}>Subscriptions</Text>
+          <Text style={styles.arrowHead}>{' >'}</Text>
+        </TouchableOpacity>
+        <SubscriptionList />
         <Text style={styles.ForYou}>ForYou</Text>
-      <ForYouList />
+        <ForYouList />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -27,14 +35,14 @@ function StoriesScreen(props) {
 const styles = StyleSheet.create({
   subText: {
     left: '20%',
-    marginTop: '5%',
+    marginTop: '2%',
     marginBottom: '3%',
     fontWeight: 'bold',
     fontSize: 20,
   },
   arrowHead: {
     marginTop: '5%',
-    marginBottom: '%',
+    bottom: '3%',
     fontWeight: 'bold',
     fontSize: 20,
     left: '20%',
@@ -43,8 +51,8 @@ const styles = StyleSheet.create({
   ForYou: {
     fontWeight: 'bold',
     fontSize: 20,
-    bottom: '9%',
     left: '5%',
+    bottom: '0.5%',
   },
   text: {
     marginTop: '5%',

@@ -14,7 +14,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 const SubscriptionRow = ({ image, title, time, star }) => {
   return (
     <TouchableOpacity style={styles.row}>
-      <View style={styles.profile}>
+      <View>
         <Image style={styles.image} source={{ uri: image }} />
       </View>
       <Text style={styles.name}>{title}</Text>
@@ -29,8 +29,7 @@ const SubscriptionRow = ({ image, title, time, star }) => {
 const styles = StyleSheet.create({
   row: {
     alignItems: 'center',
-    marginBottom: '90%',
-    padding: '0.5%',
+    padding: '0.2%',
   },
   image: {
     width: 130,
