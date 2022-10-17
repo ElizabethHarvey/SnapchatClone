@@ -9,7 +9,7 @@ function OnBoardingScreen({ navigation }) {
       <View style={styles.logo}>
         <Fontisto
           name='snapchat'
-          size={150}
+          size={95}
           color='white'
           style={styles.logo}
         />
@@ -35,14 +35,14 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignItems: 'center',
-    top: '20%',
+    top: '25%',
   },
   login: {
     backgroundColor: '#EF4E56',
     alignSelf: 'center',
-    marginTop: '140%',
+    marginTop: '156%',
     width: '100%',
-    height: '10%',
+    height: '8.5%',
     justifyContent: 'center',
   },
   loginText: {
