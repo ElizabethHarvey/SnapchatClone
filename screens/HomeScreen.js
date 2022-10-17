@@ -5,7 +5,6 @@ import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import ImageModal from '../components/ImageModal';
-import SmileModal from '../components/SmileModal';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -89,27 +88,27 @@ export default function HomeScreen({ navigation }) {
                 color={'white'}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.flash}> 
-                <Ionicons
-                  name={
+            <TouchableOpacity style={styles.flash}>
+              <Ionicons
+                name={
+                  flash === Camera.Constants.FlashMode.off
+                    ? 'flash-off-outline'
+                    : 'flash-outline'
+                }
+                size={35}
+                color={
+                  flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
+                }
+                onPress={() => {
+                  setFlash(
                     flash === Camera.Constants.FlashMode.off
-                      ? 'flash-off-outline'
-                      : 'flash-outline'
-                  }
-                  size={35}
-                  color={
-                    flash === Camera.Constants.FlashMode.off ? 'gray' : 'white'
-                  }
-                  onPress={() => {
-                    setFlash(
-                      flash === Camera.Constants.FlashMode.off
-                        ? Camera.Constants.FlashMode.on
-                        : Camera.Constants.FlashMode.off
-                        );
-                      }}
-                      />
+                      ? Camera.Constants.FlashMode.on
+                      : Camera.Constants.FlashMode.off
+                  );
+                }}
+              />
             </TouchableOpacity>
-            </View>
+          </View>
         </Camera>
       ) : (
         <Image source={{ uri: image }} style={styles.camera} />
@@ -127,11 +126,15 @@ export default function HomeScreen({ navigation }) {
                 <View
                   style={{
                     position: 'absolute',
-                    bottom:'10%',
+                    bottom: '10%',
                     left: '80%',
                   }}
                 >
-                  <Ionicons name='checkmark-circle-outline' size={50} color='white' />
+                  <Ionicons
+                    name='checkmark-circle-outline'
+                    size={50}
+                    color='white'
+                  />
                 </View>
               </TouchableOpacity>
             </View>
@@ -150,7 +153,7 @@ export default function HomeScreen({ navigation }) {
               <ImageModal />
             </TouchableOpacity>
             <TouchableOpacity style={styles.happy}>
-             <ImageModal />
+            <ImageModal />
             </TouchableOpacity>
           </View>
         )}

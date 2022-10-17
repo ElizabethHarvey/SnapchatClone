@@ -2,7 +2,7 @@ import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-function DiscoverScreen(props) {
+function DiscoverScreen({ navigation }) {
   return (
     <View style={styles.topIcons}>
         <Image
@@ -11,7 +11,8 @@ function DiscoverScreen(props) {
             uri: 'https://picsum.photos/200/300',
           }}
         />
-        <TouchableOpacity style={styles.search}>
+        <TouchableOpacity style={styles.search}
+        onPress={() => navigation.navigate('Chat')}>
           <Ionicons name='search-outline' size={30} color='#E7E6E6' />
         </TouchableOpacity>
         <Text style={styles.text}>Discover</Text>
