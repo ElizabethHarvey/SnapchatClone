@@ -18,9 +18,9 @@ const SignUpScreen = ({ navigation }) => {
       </TouchableOpacity>
       <Text style={styles.login}>What's your name?</Text>
       <Text style={styles.username}>FIRST NAME</Text>
-      <TextInput style={styles.textInput1} numberOfLines={1} width='80%' />
+      <TextInput style={styles.textInput1} numberOfLines={1} width='80%' maxLength={58} />
       <Text style={styles.password}>LAST NAME</Text>
-      <TextInput style={styles.textInput2} numberOfLines={1} width='80%' />
+      <TextInput style={styles.textInput2} numberOfLines={1} width='80%' maxLength={58} />
       <TouchableOpacity style={styles.button}>
         <Button title='Sign Up & Accept' color='white' onPress={() => navigation.navigate('Birthday')} />
       </TouchableOpacity>
