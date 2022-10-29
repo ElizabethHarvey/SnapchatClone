@@ -29,7 +29,7 @@ function BirthdayScreen({ navigation }) {
   };
 
   const showMode = (currentMode) => {
-    if (Platform.O == 'android') {
+    if (Platform.OS == 'android') {
       setShow(true);
     }
     setMode(currentMode);
@@ -38,7 +38,6 @@ function BirthdayScreen({ navigation }) {
   const showModeIOS = (currentMode) => {
     if (Platform.OS === 'ios') {
       setShow(true);
-      // for iOS, add a button that closes the picker
     }
     setMode(currentMode);
   };
@@ -84,12 +83,17 @@ function BirthdayScreen({ navigation }) {
               mode={mode}
               is24Hour={true}
               onChange={onChange}
+              style={styles.iosPicker}
             />
           )
         : null}
+      <TouchableOpacity style={styles.button}>
+        <Button title='Continue' color='white' onPress={() => navigation.navigate('AppNav')}/>
+      </TouchableOpacity>
       {Platform.OS === 'ios'
         ? show && (
             <DateTimePicker
+              display='spinner'
               testID='dateTimePicker'
               value={date}
               mode={mode}
@@ -99,9 +103,6 @@ function BirthdayScreen({ navigation }) {
             />
           )
         : null}
-      <TouchableOpacity style={styles.button}>
-        <Button title='Continue' color='white' onPress={() => navigation.navigate('AppNav')}/>
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -125,16 +126,16 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
   },
   iosPicker: {
-    top: '80%',
-    right: '17%',
+    top: '92%',
+    height: '47%',
   },
   button: {
     borderWidth: '1%',
     borderRadius: '100%',
-    width: '50%',
-    height: '20%',
+    width: '60%',
+    height: '8%',
     justifyContent: 'center',
-    top: '165%',
+    top: '95%',
     alignSelf: 'center',
     backgroundColor: 'lightgray',
     borderColor: 'lightgray',

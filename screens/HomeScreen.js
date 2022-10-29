@@ -61,7 +61,7 @@ export default function HomeScreen({ navigation }) {
           <View style={styles.Header}>
             <TouchableOpacity
               style={styles.profilePic}
-              onPress={() => navigation.navigate('Chat')}
+              onPress={() => navigation.navigate('')}
             >
               <Image
                 source={{ uri: 'https://picsum.photos/200/300' }}

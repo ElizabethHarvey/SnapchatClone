@@ -6,6 +6,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -14,13 +15,16 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 const LoginScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
+      <KeyboardAvoidingView
+      enabled={false}
+      >
       <TouchableOpacity style={{ left: '5%' }}>
         <Ionicons
           name='chevron-back-outline'
           size='30%'
-          color='#11ACFA'
+          color='#1FAEE0'
           onPress={() => navigation.navigate('OnBoard')}
-        />
+          />
       </TouchableOpacity>
       <Text style={styles.login}>Log In</Text>
       <Text style={styles.username}>USERNAME OR EMAIL</Text>
@@ -30,9 +34,10 @@ const LoginScreen = ({ navigation }) => {
       <TouchableOpacity style={styles.button}>
         <Button title='Log In' color='white'  onPress={() => navigation.navigate('AppNav')}/>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.forgot}>
-        <Button title='Forgot your password?' color='#0074FF' height='5%' />
+      <TouchableOpacity>
+        <Text style={styles.forgot}>Forgot your password?</Text>
       </TouchableOpacity>
+          </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
@@ -44,30 +49,30 @@ const styles = StyleSheet.create({
   login: {
     fontSize: '23%',
     alignSelf: 'center',
-    top: '6%',
+    top: '17%',
   },
   username: {
-    top: '10%',
+    top: '29%',
     left: '10%',
     letterSpacing: '1%',
-    color: 'gray',
+    color: '#828A93',
     fontSize: '12%',
   },
   textInput1: {
-    top: '12%',
+    top: '37%',
     left: '10%',
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
   },
   password: {
-    top: '13.5%',
+    top: '40.5%',
     left: '10%',
     letterSpacing: '1%',
-    color: 'gray',
-    fontSize: '12%',
+    color: '#828A93',
+    fontSize: '11%',
   },
   textInput2: {
-    top: '16%',
+    top: '47%',
     left: '10%',
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
@@ -75,16 +80,20 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: '1%',
     borderRadius: '100%',
-    width: '60%',
-    height: '6.5%',
+    width: '55%',
+    height: '17%',
     justifyContent: 'center',
-    top: '40%',
+    top: '220%',
     alignSelf: 'center',
-    backgroundColor: '#4EC3EF',
-    borderColor: '#4EC3EF',
+    backgroundColor: '#1FAEE0',
+    borderColor: '#1FAEE0',
   },
   forgot: {
     top: '15%',
+    color: '#0076FE',
+    top: '950%',
+    fontSize: '12%',
+    alignSelf: 'center',
   },
 });
 

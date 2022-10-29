@@ -30,7 +30,7 @@ function OnBoardingScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#FFFC00',
     flex: 1,
   },
   logo: {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     top: '25%',
   },
   login: {
-    backgroundColor: '#EF4E56',
+    backgroundColor: '#EE4850',
     alignSelf: 'center',
     marginTop: '156%',
     width: '100%',
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     fontSize: '25%',
   },
   signUp: {
-    backgroundColor: '#4EC3EF',
+    backgroundColor: '#3DACF2',
     alignSelf: 'center',
     width: '100%',
     height: '10%',
