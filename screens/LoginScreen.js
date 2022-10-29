@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     width: '55%',
     height: '17%',
     justifyContent: 'center',
-    top: '220%',
+    top: '120%',
     alignSelf: 'center',
     backgroundColor: '#1FAEE0',
     borderColor: '#1FAEE0',
