@@ -26,8 +26,6 @@ const OnBoardingNavigator = (props) => {
       <Stack.Screen component={AppNavigator} name='AppNav' />
       <Stack.Screen component={SignUpUsername} name='User' />
       <Stack.Screen component={SignUpPassword} name='Password' />
-
-      
     </Stack.Navigator>
   );
 };
