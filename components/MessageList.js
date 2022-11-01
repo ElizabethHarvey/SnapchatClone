@@ -13,7 +13,7 @@ const MessageList = (props) => {
       IconName: 'square',
       IconColor: 'red',
       textColor: 'red',
-      time: '10m'
+      time: '10m',
     },
     {
       id: 2,
@@ -25,8 +25,7 @@ const MessageList = (props) => {
       IconColor: 'purple',
       textColor: 'purple',
       time: '20m',
-      smile:'😊'
-
+      smile: '😊',
     },
     {
       id: 3,
@@ -49,8 +48,7 @@ const MessageList = (props) => {
       IconColor: 'red',
       textColor: 'grey',
       time: '5m',
-      smile:'😊'
-
+      smile: '😊',
     },
     {
       id: 5,
@@ -62,7 +60,7 @@ const MessageList = (props) => {
       IconColor: 'purple',
       textColor: 'grey',
       time: '5m',
-      smile:'😊'
+      smile: '😊',
     },
     {
       id: 6,
@@ -96,8 +94,7 @@ const MessageList = (props) => {
       IconColor: 'purple',
       textColor: 'grey',
       time: '40m',
-      smile:'😊'
-
+      smile: '😊',
     },
     {
       id: 9,
@@ -119,12 +116,10 @@ const MessageList = (props) => {
       IconColor: 'lightblue',
       textColor: 'grey',
       time: '5m',
-      smile:'😊'
-
+      smile: '😊',
     },
   ];
 
-  
   return (
     <View>
       <FlatList
@@ -148,7 +143,4 @@ const MessageList = (props) => {
   );
 };
 
-
-
 export default MessageList;
-
