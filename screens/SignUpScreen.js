@@ -11,12 +11,10 @@ import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const SignUpScreen = ({ navigation }) => {
-  const [email, userEmail] = useState(); 
-  const [password, userPassword] = useState(); 
+  const [email, userEmail] = useState();
+  const [password, userPassword] = useState();
 
-  const signUp = () => {
-
-  };
+  const signUp = () => {};
 
   return (
     <SafeAreaView style={styles.container}>
@@ -35,7 +33,6 @@ const SignUpScreen = ({ navigation }) => {
         numberOfLines={1}
         width='80%'
         maxLength={58}
-
       />
       <Text style={styles.password}>LAST NAME</Text>
       <TextInput
