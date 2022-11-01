@@ -1,7 +1,6 @@
 import React from 'react';
-import {  View, FlatList } from 'react-native';
+import { View, FlatList } from 'react-native';
 import FriendsRow from './FriendsRow';
-
 
 const FriendsList = (props) => {
   const DUMMY_DATA = [
@@ -9,7 +8,7 @@ const FriendsList = (props) => {
       id: 1,
       name: 'Daddy',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 2,
@@ -20,7 +19,7 @@ const FriendsList = (props) => {
       id: 3,
       name: 'Zeke H.',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 4,
@@ -31,13 +30,13 @@ const FriendsList = (props) => {
       id: 5,
       name: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 6,
       name: 'harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 7,
@@ -48,7 +47,7 @@ const FriendsList = (props) => {
       id: 8,
       name: 'Lizzy Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 9,
@@ -59,7 +58,7 @@ const FriendsList = (props) => {
       id: 10,
       name: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
   ];
 
@@ -71,7 +70,7 @@ const FriendsList = (props) => {
         data={DUMMY_DATA}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <FriendsRow image={item.image} name={item.name} lock={item.lock}/>
+          <FriendsRow image={item.image} name={item.name} lock={item.lock} />
         )}
       />
     </View>

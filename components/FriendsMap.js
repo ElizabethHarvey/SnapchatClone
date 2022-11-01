@@ -10,7 +10,12 @@ function FriendsMap(props) {
       >
         <Image
           source={{ uri: 'https://picsum.photos/200/300' }}
-          style={{ width: '85%', height: '90%', borderRadius: '100%', alignItems: 'center'}}
+          style={{
+            width: '85%',
+            height: '90%',
+            borderRadius: '100%',
+            alignItems: 'center',
+          }}
         />
       </TouchableOpacity>
       <Text style={styles.text}>Friends</Text>
@@ -22,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: '10%',
     width: 70,
-    height:30,
+    height: 30,
     borderRadius: '100%',
     position: 'absolute',
     borderWidth: 1,
@@ -48,7 +53,7 @@ const styles = StyleSheet.create({
     fontSize: '15',
     top: '65%',
     backgroundColor: 'lightgray',
-  }
+  },
 });
 
 export default FriendsMap;
