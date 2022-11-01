@@ -7,15 +7,12 @@ function OnBoardingScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
-        <Fontisto
-          name='snapchat'
-          size={95}
-          color='white'
-          style={styles.logo}
-        />
+        <Fontisto name='snapchat' size={95} color='white' style={styles.logo} />
       </View>
-      <TouchableOpacity style={styles.login}
-      onPress={() => navigation.navigate('LogIn')}>
+      <TouchableOpacity
+        style={styles.login}
+        onPress={() => navigation.navigate('LogIn')}
+      >
         <Text style={styles.loginText}>LOG IN</Text>
       </TouchableOpacity>
       <TouchableOpacity

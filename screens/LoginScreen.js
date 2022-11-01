@@ -17,7 +17,14 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState();
 
   const login = () => {
-    auth.signInWithEmailAndPassword(email, password).then(() => {console.log(auth.currentUser)}).then(() => {navigation.navigate('AppNav')});
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log(auth.currentUser);
+      })
+      .then(() => {
+        navigation.navigate('AppNav');
+      });
   };
 
   return (
@@ -38,7 +45,7 @@ const LoginScreen = ({ navigation }) => {
           numberOfLines={1}
           width='80%'
           maxLength={58}
-          onChangeText={text => setEmail(text)}
+          onChangeText={(text) => setEmail(text)}
           value={email}
         />
         <Text style={styles.password}>PASSWORD</Text>
@@ -48,15 +55,11 @@ const LoginScreen = ({ navigation }) => {
           width='80%'
           maxLength={58}
           secureTextEntry={true}
-          onChangeText={text => setPassword(text)}
+          onChangeText={(text) => setPassword(text)}
           value={password}
-          />
+        />
         <TouchableOpacity style={styles.button}>
-          <Button
-            title='Log In'
-            color='white'
-            onPress={login}
-          />
+          <Button title='Log In' color='white' onPress={login} />
         </TouchableOpacity>
         <Text style={styles.forgot}>Forgot your password?</Text>
       </KeyboardAvoidingView>
