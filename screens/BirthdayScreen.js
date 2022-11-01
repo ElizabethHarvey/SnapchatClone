@@ -108,7 +108,7 @@ function BirthdayScreen({ navigation }) {
               is24Hour={true}
               onChange={onChangeIos}
               style={styles.iosPicker}
-              maximumDate={new Date(2023, 11, 2)}
+              maximumDate={new Date(2023, 10, 1)}
             />
           )
         : null}
