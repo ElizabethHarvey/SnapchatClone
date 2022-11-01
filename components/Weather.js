@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import  { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 function Weather(props) {
   return (
     <TouchableOpacity style={styles.container}>
-      <View style={{ flexDirection: 'row', alignItems: 'center', right: '76%' }}>
-      <FontAwesome
+      <View
+        style={{ flexDirection: 'row', alignItems: 'center', right: '76%' }}
+      >
+        <FontAwesome
           name='cloud'
           size={50}
           color='white'
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: '15%',
     fontWeight: 'bold',
     paddingRight: '1%',
-    right: '15%'
+    right: '15%',
   },
   dot: {
     color: 'lightgray',
@@ -63,18 +65,18 @@ const styles = StyleSheet.create({
     color: 'lightgray',
     fontSize: '15%',
     fontWeight: 'bold',
-    bottom: '18%'
+    bottom: '18%',
   },
   text2: {
     color: 'lightgray',
     fontSize: '15%',
     fontWeight: 'bold',
     right: '1.5%',
-    bottom: '18%'
+    bottom: '18%',
   },
   cloud: {
     right: '10%',
-    top: '5%'
+    top: '5%',
   },
 });
 

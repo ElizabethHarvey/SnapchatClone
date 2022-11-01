@@ -11,7 +11,7 @@ import {
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const TrendingNowRow = ({ image, title, }) => {
+const TrendingNowRow = ({ image, title }) => {
   return (
     <TouchableOpacity style={styles.row}>
       <View>
