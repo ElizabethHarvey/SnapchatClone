@@ -91,12 +91,11 @@ function BirthdayScreen({ navigation }) {
             />
           )
         : null}
-      <TouchableOpacity style={styles.color}>
+      <TouchableOpacity style={styles.button}>
         <Button
           title='Continue'
           color='white'
           onPress={() => navigation.navigate('User')}
-          style={styles.button}
         />
       </TouchableOpacity>
       {Platform.OS === 'ios'
@@ -109,6 +108,7 @@ function BirthdayScreen({ navigation }) {
               is24Hour={true}
               onChange={onChangeIos}
               style={styles.iosPicker}
+              maximumDate={new Date(2023, 11, 2)}
             />
           )
         : null}
@@ -135,23 +135,21 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
   },
   iosPicker: {
-    top: '11%',
+    top: '25%',
     right: '17%',
     height: '47%',
   },
   button: {
     position: 'absolute',
-  },
-  color: {
     borderWidth: '1%',
     borderRadius: '100%',
-    width: '60%',
-    height: '8%',
-    backgroundColor: 'lightgray',
-    borderColor: 'lightgray',
-    top: '95%',
+    width: '55%',
+    height: '10%',
+    backgroundColor: '#1FAEE0',
+    borderColor: '#1FAEE0',
+    top: '125%',
     alignSelf: 'center',
-  }
+  },
 });
 
 export default BirthdayScreen;
