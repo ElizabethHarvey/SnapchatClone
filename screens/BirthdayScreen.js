@@ -91,17 +91,18 @@ function BirthdayScreen({ navigation }) {
             />
           )
         : null}
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.color}>
         <Button
           title='Continue'
           color='white'
-          onPress={() => navigation.navigate('AppNav')}
+          onPress={() => navigation.navigate('User')}
+          style={styles.button}
         />
       </TouchableOpacity>
       {Platform.OS === 'ios'
         ? show && (
             <DateTimePicker
-              display='spinner'
+              display='default'
               testID='dateTimePicker'
               value={date}
               mode={mode}
@@ -134,21 +135,23 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
   },
   iosPicker: {
-    top: '92%',
+    top: '11%',
+    right: '17%',
     height: '47%',
   },
   button: {
+    position: 'absolute',
+  },
+  color: {
     borderWidth: '1%',
     borderRadius: '100%',
     width: '60%',
     height: '8%',
-    justifyContent: 'center',
-    top: '95%',
-    alignSelf: 'center',
     backgroundColor: 'lightgray',
     borderColor: 'lightgray',
-    fontWeight: 'bold',
-  },
+    top: '95%',
+    alignSelf: 'center',
+  }
 });
 
 export default BirthdayScreen;
