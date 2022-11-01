@@ -29,7 +29,9 @@ const ImageModal = () => {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Your to ugly too be seen in photos don't bother</Text>
+            <Text style={styles.modalText}>
+              Your to ugly too be seen in photos don't bother
+            </Text>
             <ExitIcon onPress={() => setModalVisible(!modalVisible)} />
           </View>
         </View>
