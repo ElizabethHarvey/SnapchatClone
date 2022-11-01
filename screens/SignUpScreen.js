@@ -7,28 +7,55 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const SignUpScreen = ({ navigation }) => {
+  const [email, userEmail] = useState(); 
+  const [password, userPassword] = useState(); 
+
+  const signUp = () => {
+
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={{ left: '5%'}}>
-        <Ionicons name='chevron-back-outline' size='30%' color='#11ACFA' onPress={() => navigation.navigate('OnBoard')}/>
+      <TouchableOpacity style={{ left: '5%' }}>
+        <Ionicons
+          name='chevron-back-outline'
+          size='30%'
+          color='#11ACFA'
+          onPress={() => navigation.navigate('OnBoard')}
+        />
       </TouchableOpacity>
       <Text style={styles.login}>What's your name?</Text>
       <Text style={styles.username}>FIRST NAME</Text>
-      <TextInput style={styles.textInput1} numberOfLines={1} width='80%' maxLength={58} />
+      <TextInput
+        style={styles.textInput1}
+        numberOfLines={1}
+        width='80%'
+        maxLength={58}
+
+      />
       <Text style={styles.password}>LAST NAME</Text>
-      <TextInput style={styles.textInput2} numberOfLines={1} width='80%' maxLength={58} />
+      <TextInput
+        style={styles.textInput2}
+        numberOfLines={1}
+        width='80%'
+        maxLength={58}
+      />
       <TouchableOpacity style={styles.button}>
-        <Button title='Sign Up & Accept' color='white' onPress={() => navigation.navigate('Birthday')} />
+        <Button
+          title='Sign Up & Accept'
+          color='white'
+          onPress={() => navigation.navigate('Birthday')}
+        />
       </TouchableOpacity>
       <Text style={styles.text}>
         By tapping Sign Up & Accept, you acknowledge that
       </Text>
       <Text style={styles.text2}>
-        you have read the Privacy Policy and agree to the{' '}
+        you have read the Privacy Policy and agree to the
       </Text>
       <Text style={styles.text3}>Terms of Service.</Text>
     </SafeAreaView>
