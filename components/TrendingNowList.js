@@ -13,7 +13,7 @@ const TrendingNowList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 2,
@@ -27,20 +27,20 @@ const TrendingNowList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 4,
       title: 'Ethan H.',
       image: 'https://picsum.photos/200/300',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 5,
       title: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 6,
@@ -48,7 +48,7 @@ const TrendingNowList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 7,
@@ -61,7 +61,7 @@ const TrendingNowList = (props) => {
       title: 'Lizzy Harvey',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 9,
@@ -74,7 +74,7 @@ const TrendingNowList = (props) => {
       title: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
-      star: '✪'
+      star: '✪',
     },
   ];
 

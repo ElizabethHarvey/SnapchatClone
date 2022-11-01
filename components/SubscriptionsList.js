@@ -12,7 +12,7 @@ const SubscriptionList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 2,
@@ -26,20 +26,20 @@ const SubscriptionList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 4,
       title: 'Ethan H.',
       image: 'https://picsum.photos/200/300',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 5,
       title: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 6,
@@ -47,7 +47,7 @@ const SubscriptionList = (props) => {
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 7,
@@ -60,7 +60,7 @@ const SubscriptionList = (props) => {
       title: 'Lizzy Harvey',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
-      star: '✪'
+      star: '✪',
     },
     {
       id: 9,
@@ -73,7 +73,7 @@ const SubscriptionList = (props) => {
       title: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
-      star: '✪'
+      star: '✪',
     },
   ];
 
@@ -85,7 +85,12 @@ const SubscriptionList = (props) => {
         data={DUMMY_DATA}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <SubscriptionsRow image={item.image} title={item.title} time={item.time} star={item.star} />
+          <SubscriptionsRow
+            image={item.image}
+            title={item.title}
+            time={item.time}
+            star={item.star}
+          />
         )}
       />
     </View>

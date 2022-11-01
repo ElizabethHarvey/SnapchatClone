@@ -18,7 +18,7 @@ const SubscriptionRow = ({ image, title, time, star }) => {
         <Image style={styles.image} source={{ uri: image }} />
       </View>
       <Text style={styles.name}>{title}</Text>
-      <View style={{ bottom: '10%', alignItems: 'center'}}>
+      <View style={{ bottom: '10%', alignItems: 'center' }}>
         <Text style={styles.time}>{time}</Text>
         <Text style={styles.star}>{star}</Text>
       </View>
