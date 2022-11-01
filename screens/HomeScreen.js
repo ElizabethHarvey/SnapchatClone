@@ -5,6 +5,7 @@ import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 import ImageModal from '../components/ImageModal';
+import { auth } from '../firebase';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -12,6 +13,8 @@ export default function HomeScreen({ navigation }) {
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
   const cameraRef = useRef(null);
+
+  console.log(auth.currentUser);
 
   useEffect(() => {
     (async () => {
