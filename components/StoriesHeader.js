@@ -5,19 +5,19 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 function StoriesHeader(props) {
   return (
     <View style={styles.topIcons}>
-        <Image
-          style={styles.profilePic}
-          source={{
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-        <TouchableOpacity style={styles.search}>
-          <Ionicons name='search-outline' size={30} color='#5A5A5A' />
-        </TouchableOpacity>
-        <Text style={styles.text}>Stories</Text>
-        <TouchableOpacity style={styles.person}>
-          <Ionicons name='person-add' size={30} color='#5A5A5A' />
-        </TouchableOpacity>
+      <Image
+        style={styles.profilePic}
+        source={{
+          uri: 'https://picsum.photos/200/300',
+        }}
+      />
+      <TouchableOpacity style={styles.search}>
+        <Ionicons name='search-outline' size={30} color='#5A5A5A' />
+      </TouchableOpacity>
+      <Text style={styles.text}>Stories</Text>
+      <TouchableOpacity style={styles.person}>
+        <Ionicons name='person-add' size={30} color='#5A5A5A' />
+      </TouchableOpacity>
       <TouchableOpacity style={styles.dots}>
         <Ionicons name='ellipsis-horizontal' size={33} color='#5A5A5A' />
       </TouchableOpacity>
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-    right: '300%'
+    right: '300%',
   },
   topIcons: {
     flexDirection: 'row',
