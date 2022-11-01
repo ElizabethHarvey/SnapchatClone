@@ -8,36 +8,58 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
+import { auth } from '../firebase';
 
 const LoginScreen = ({ navigation }) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const login = () => {
+    auth.signInWithEmailAndPassword(email, password).then(() => {console.log(auth.currentUser)}).then(() => {navigation.navigate('AppNav')});
+  };
+
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView
-      enabled={false}
-      >
-      <TouchableOpacity style={{ left: '5%' }}>
-        <Ionicons
-          name='chevron-back-outline'
-          size='30%'
-          color='#1FAEE0'
-          onPress={() => navigation.navigate('OnBoard')}
+      <KeyboardAvoidingView enabled={false}>
+        <TouchableOpacity style={{ left: '5%' }}>
+          <Ionicons
+            name='chevron-back-outline'
+            size='30%'
+            color='#1FAEE0'
+            onPress={() => navigation.navigate('OnBoard')}
           />
-      </TouchableOpacity>
-      <Text style={styles.login}>Log In</Text>
-      <Text style={styles.username}>USERNAME OR EMAIL</Text>
-      <TextInput style={styles.textInput1} numberOfLines={1} width='80%' maxLength={58} />
-      <Text style={styles.password}>PASSWORD</Text>
-      <TextInput style={styles.textInput2} numberOfLines={1} width='80%' maxLength={58} />
-      <TouchableOpacity style={styles.button}>
-        <Button title='Log In' color='white'  onPress={() => navigation.navigate('AppNav')}/>
-      </TouchableOpacity>
-      <TouchableOpacity>
+        </TouchableOpacity>
+        <Text style={styles.login}>Log In</Text>
+        <Text style={styles.username}>USERNAME OR EMAIL</Text>
+        <TextInput
+          style={styles.textInput1}
+          numberOfLines={1}
+          width='80%'
+          maxLength={58}
+          onChangeText={text => setEmail(text)}
+          value={email}
+        />
+        <Text style={styles.password}>PASSWORD</Text>
+        <TextInput
+          style={styles.textInput2}
+          numberOfLines={1}
+          width='80%'
+          maxLength={58}
+          secureTextEntry={true}
+          onChangeText={text => setPassword(text)}
+          value={password}
+          />
+        <TouchableOpacity style={styles.button}>
+          <Button
+            title='Log In'
+            color='white'
+            onPress={login}
+          />
+        </TouchableOpacity>
         <Text style={styles.forgot}>Forgot your password?</Text>
-      </TouchableOpacity>
-          </KeyboardAvoidingView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
