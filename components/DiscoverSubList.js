@@ -37,7 +37,7 @@ const DiscoverSubList = (props) => {
       id: 5,
       title: 'Elijah Harvey',
       image: 'https://picsum.photos/200/300',
-      lock: 'lock-closed'
+      lock: 'lock-closed',
     },
     {
       id: 6,
