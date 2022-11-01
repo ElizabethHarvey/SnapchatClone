@@ -61,7 +61,9 @@ function BirthdayScreen({ navigation }) {
             placeholderTextColor={'black'}
             editable={false}
             style={styles.textInput1}
-            value={date.getMonth()+'/'+date.getDate()+'/'+date.getFullYear()}
+            value={
+              date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()
+            }
           />
         </TouchableOpacity>
       ) : null}
@@ -70,7 +72,9 @@ function BirthdayScreen({ navigation }) {
           placeholderTextColor={'black'}
           editable={false}
           style={styles.textInput1}
-          value={date.getMonth()+'/'+date.getDate()+'/'+date.getFullYear()}
+          value={
+            date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear()
+          }
           onPressIn={showDatepickerIOS}
           width='70%'
         />
@@ -88,7 +92,11 @@ function BirthdayScreen({ navigation }) {
           )
         : null}
       <TouchableOpacity style={styles.button}>
-        <Button title='Continue' color='white' onPress={() => navigation.navigate('AppNav')}/>
+        <Button
+          title='Continue'
+          color='white'
+          onPress={() => navigation.navigate('AppNav')}
+        />
       </TouchableOpacity>
       {Platform.OS === 'ios'
         ? show && (

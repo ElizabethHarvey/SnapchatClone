@@ -156,7 +156,7 @@ export default function HomeScreen({ navigation }) {
               <ImageModal />
             </TouchableOpacity>
             <TouchableOpacity style={styles.happy}>
-            <ImageModal />
+              <ImageModal />
             </TouchableOpacity>
           </View>
         )}
