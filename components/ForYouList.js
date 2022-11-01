@@ -52,18 +52,17 @@ const ForYouList = (props) => {
     return <View style={styles.headerFooterStyle}></View>;
   };
 
-
   return (
     <View>
       <FlatList
         ListFooterComponent={ListFooter}
-        vertical={true} 
+        vertical={true}
         numColumns={2}
         showsVerticalScrollIndicator={false}
         data={DUMMY_DATA}
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
-          <ForYouRow image={item.image} title={item.title} time={item.time}/>
+          <ForYouRow image={item.image} title={item.title} time={item.time} />
         )}
       />
     </View>
