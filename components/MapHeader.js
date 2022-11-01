@@ -9,7 +9,6 @@ function MapHeader({ title }) {
         style={styles.profilePic}
         source={{
           uri: 'https://picsum.photos/200/300',
-          
         }}
       />
       <TouchableOpacity style={styles.search}>
