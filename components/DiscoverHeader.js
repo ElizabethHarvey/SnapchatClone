@@ -5,17 +5,19 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 function DiscoverScreen({ navigation }) {
   return (
     <View style={styles.topIcons}>
-        <Image
-          style={styles.profilePic}
-          source={{
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-        <TouchableOpacity style={styles.search}
-        onPress={() => navigation.navigate('Chat')}>
-          <Ionicons name='search-outline' size={30} color='#E7E6E6' />
-        </TouchableOpacity>
-        <Text style={styles.text}>Discover</Text>
+      <Image
+        style={styles.profilePic}
+        source={{
+          uri: 'https://picsum.photos/200/300',
+        }}
+      />
+      <TouchableOpacity
+        style={styles.search}
+        onPress={() => navigation.navigate('Chat')}
+      >
+        <Ionicons name='search-outline' size={30} color='#E7E6E6' />
+      </TouchableOpacity>
+      <Text style={styles.text}>Discover</Text>
       <TouchableOpacity style={styles.dots}>
         <Ionicons name='ellipsis-horizontal' size={33} color='#E7E6E6' />
       </TouchableOpacity>
