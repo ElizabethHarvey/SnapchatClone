@@ -10,7 +10,17 @@ import {
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const MessageRow = ({ image, streak, name, textColor, title, iconName, time, iconColor, smile }) => {
+const MessageRow = ({
+  image,
+  streak,
+  name,
+  textColor,
+  title,
+  iconName,
+  time,
+  iconColor,
+  smile,
+}) => {
   return (
     <TouchableOpacity style={styles.row}>
       <Image style={styles.image} source={{ uri: image }} />
@@ -22,13 +32,16 @@ const MessageRow = ({ image, streak, name, textColor, title, iconName, time, ico
             name={iconName}
             size={15}
             color={iconColor}
-            />
-          <Text style={{ color:textColor ,}}>{title}</Text>
-          <Text style={{ color: 'darkgray', fontWeight: '800' }}> • {time} • </Text>
+          />
+          <Text style={{ color: textColor }}>{title}</Text>
+          <Text style={{ color: 'darkgray', fontWeight: '800' }}>
+            {' '}
+            • {time} •{' '}
+          </Text>
           <Text>{streak} 🔥</Text>
         </View>
       </View>
-            <Text style={styles.smile}>{smile}</Text>
+      <Text style={styles.smile}>{smile}</Text>
     </TouchableOpacity>
   );
 };
@@ -62,7 +75,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     fontSize: '25%',
     alignSelf: 'center',
-  }
+  },
 });
 
 export default MessageRow;

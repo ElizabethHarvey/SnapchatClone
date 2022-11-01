@@ -3,14 +3,19 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function MyBitmoji(props) {
   return (
-    <View >
+    <View>
       <TouchableOpacity
         style={styles.container}
         onPress={() => navigation.navigate('Chat')}
       >
         <Image
           source={{ uri: 'https://picsum.photos/200/300' }}
-          style={{ width: '85%', height: '90%', borderRadius: '100%', alignItems: 'center'}}
+          style={{
+            width: '85%',
+            height: '90%',
+            borderRadius: '100%',
+            alignItems: 'center',
+          }}
         />
       </TouchableOpacity>
       <Text style={styles.text}>My Bitmoji</Text>
@@ -21,7 +26,7 @@ function MyBitmoji(props) {
 const styles = StyleSheet.create({
   styling: {
     top: '72%',
-    left: '3%'
+    left: '3%',
   },
   container: {
     marginTop: '10%',
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: '15',
     top: '65%',
     backgroundColor: 'lightgray',
-  }
+  },
 });
 
 export default MyBitmoji;
