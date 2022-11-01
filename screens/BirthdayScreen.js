@@ -61,7 +61,7 @@ function BirthdayScreen({ navigation }) {
             placeholderTextColor={'black'}
             editable={false}
             style={styles.textInput1}
-            value={date.toLocaleString()}
+            value={date.getMonth()+'/'+date.getDate()+'/'+date.getFullYear()}
           />
         </TouchableOpacity>
       ) : null}
@@ -70,7 +70,7 @@ function BirthdayScreen({ navigation }) {
           placeholderTextColor={'black'}
           editable={false}
           style={styles.textInput1}
-          value={date.toLocaleString()}
+          value={date.getMonth()+'/'+date.getDate()+'/'+date.getFullYear()}
           onPressIn={showDatepickerIOS}
           width='70%'
         />
