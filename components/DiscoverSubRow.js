@@ -11,7 +11,7 @@ import {
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-const DiscoverSubRow = ({ image, title, }) => {
+const DiscoverSubRow = ({ image, title }) => {
   return (
     <TouchableOpacity style={styles.row}>
       <View>
