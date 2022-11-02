@@ -91,13 +91,13 @@ function BirthdayScreen({ navigation }) {
             />
           )
         : null}
-      <TouchableOpacity style={styles.button}>
+      <View style={styles.button}>
         <Button
           title='Continue'
           color='white'
           onPress={() => navigation.navigate('User')}
         />
-      </TouchableOpacity>
+      </View>
       {Platform.OS === 'ios'
         ? show && (
             <DateTimePicker
@@ -108,7 +108,6 @@ function BirthdayScreen({ navigation }) {
               is24Hour={true}
               onChange={onChangeIos}
               style={styles.iosPicker}
-              maximumDate={new Date(2023, 10, 1)}
             />
           )
         : null}
@@ -149,6 +148,7 @@ const styles = StyleSheet.create({
     borderColor: '#1FAEE0',
     top: '125%',
     alignSelf: 'center',
+    justifyContent:'center',
   },
 });
 
