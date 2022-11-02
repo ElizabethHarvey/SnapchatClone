@@ -8,6 +8,7 @@ import OnBoardingScreen from '../screens/OnBoardingScreen';
 import BirthdayScreen from '../screens/BirthdayScreen';
 import SignUpPassword from '../screens/SignUpPassword';
 import SignUpUsername from '../screens/SignUpUsername';
+import SignUpEmail from '../screens/SignUpEmail';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ const OnBoardingNavigator = (props) => {
       <Stack.Screen component={AppNavigator} name='AppNav' />
       <Stack.Screen component={SignUpUsername} name='User' />
       <Stack.Screen component={SignUpPassword} name='Password' />
+      <Stack.Screen component={SignUpEmail} name='Email' />
     </Stack.Navigator>
   );
 };
