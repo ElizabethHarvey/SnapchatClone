@@ -11,7 +11,7 @@ import {
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 function BirthdayScreen({ navigation }) {
-  const [date, setDate] = useState(new Date('10/18/2022'));
+  const [date, setDate] = useState(new Date('October 18, 2022'));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [showIos, setShowIos] = useState(false);
@@ -54,7 +54,12 @@ function BirthdayScreen({ navigation }) {
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>When's your birthday?</Text>
       <Text style={styles.birthday}>BIRTHDAY</Text>
-
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => navigation.navigate('User')}
+      >
+        <Text style={styles.signUpText}>Continue</Text>
+      </TouchableOpacity>
       {Platform.OS === 'android' ? (
         <TouchableOpacity onPress={showDatepicker}>
           <TextInput
@@ -91,17 +96,10 @@ function BirthdayScreen({ navigation }) {
             />
           )
         : null}
-      <View style={styles.button}>
-        <Button
-          title='Continue'
-          color='white'
-          onPress={() => navigation.navigate('User')}
-        />
-      </View>
       {Platform.OS === 'ios'
         ? show && (
             <DateTimePicker
-              display='default'
+              display='spinner'
               testID='dateTimePicker'
               value={date}
               mode={mode}
@@ -134,21 +132,31 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
   },
   iosPicker: {
-    top: '25%',
-    right: '17%',
-    height: '47%',
+    top: '79%',
+    width: '100%',
+    height: '30%',
+    position: 'absolute',
+    alignSelf: 'center',
   },
   button: {
     position: 'absolute',
     borderWidth: '1%',
     borderRadius: '100%',
+    bottom: '34%',
     width: '55%',
-    height: '10%',
+    height: '6%',
     backgroundColor: '#1FAEE0',
     borderColor: '#1FAEE0',
-    top: '125%',
     alignSelf: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
+  },
+  container: {
+    flex: 1,
+  },
+  signUpText: {
+    alignSelf: 'center',
+    color: 'white',
+    fontSize: '20%',
   },
 });
 
