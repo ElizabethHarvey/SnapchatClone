@@ -19,7 +19,7 @@ const SignUpPassword = ({ navigation }) => {
             name='chevron-back-outline'
             size='30%'
             color='#11ACFA'
-            onPress={() => navigation.navigate('User')}
+            onPress={() => navigation.navigate('Email')}
           />
         </TouchableOpacity>
         <Text style={styles.login}>Set a password</Text>
@@ -31,6 +31,7 @@ const SignUpPassword = ({ navigation }) => {
           numberOfLines={1}
           width='80%'
           maxLength={15}
+          secureTextEntry={true}
         />
         <View style={styles.button}>
           <Button

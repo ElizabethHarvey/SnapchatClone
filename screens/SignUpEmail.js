@@ -19,7 +19,7 @@ const SignUpEmail = ({ navigation }) => {
             name='chevron-back-outline'
             size='30%'
             color='#11ACFA'
-            onPress={() => navigation.navigate('Password')}
+            onPress={() => navigation.navigate('User')}
           />
         </TouchableOpacity>
         <Text style={styles.text}>What's your email?</Text>
@@ -35,7 +35,7 @@ const SignUpEmail = ({ navigation }) => {
           <Button
             title='Continue'
             color='white'
-            onPress={() => navigation.navigate('Email')}
+            onPress={() => navigation.navigate('Password')}
           />
         </View>
     </SafeAreaView>
