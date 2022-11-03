@@ -41,13 +41,13 @@ const SignUpScreen = ({ navigation }) => {
         width='80%'
         maxLength={58}
       />
-      <TouchableOpacity style={styles.button}>
+      <View style={styles.button}>
         <Button
           title='Sign Up & Accept'
           color='white'
           onPress={() => navigation.navigate('Birthday')}
         />
-      </TouchableOpacity>
+      </View>
       <Text style={styles.text}>
         By tapping Sign Up & Accept, you acknowledge that
       </Text>
