@@ -8,10 +8,34 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { auth } from '../firebase';
 
 const SignUpEmail = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        navigation.replace("Email");
+      }
+    })
+
+    return unsubscribe
+  }, [])
+  
+  const SignUp = () => {
+    auth
+    .createUserWithEmailAndPassword(email, password)
+    .then(userCredentials => {
+      const user = userCredentials.user;
+      console.log('Registered with:', user.email);
+    })
+    .catch(error => alert(error.message))
+  };
+
   return (
     <SafeAreaView style={styles.container}>
         <TouchableOpacity style={{ left: '5%' }}>
@@ -22,31 +46,40 @@ const SignUpEmail = ({ navigation }) => {
             onPress={() => navigation.navigate('User')}
           />
         </TouchableOpacity>
-        <Text style={styles.text}>What's your email?</Text>
+        <Text style={styles.title}>What's your email?</Text>
         <Text style={styles.email}>EMAIL</Text>
         <TextInput
           style={styles.textInput1}
           numberOfLines={1}
           width='80%'
-          maxLength={15}
+          maxLength={50}
           keyboardType='email-address'
+          onChange={text => setEmail(text)}
+          value={email}
         />
-        <View style={styles.button}>
-          <Button
-            title='Continue'
-            color='white'
-            onPress={() => navigation.navigate('Password')}
-          />
-        </View>
+          <TextInput
+          style={styles.textInput2}
+          numberOfLines={1}
+          width='80%'
+          maxLength={50}
+          keyboardType='email-address'
+          onChange={text => setPassword(text)}
+          value={password}
+        />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}onPress={SignUp}>
+            Continue
+          </Text>
+        </TouchableOpacity>
     </SafeAreaView>
   );
-};``
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  text: {
+  title: {
     fontSize: '22%',
     alignSelf: 'center',
     top: '10%',
@@ -64,6 +97,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
   },
+  textInput2: {
+    top: '25%',
+    left: '10%',
+    borderBottomWidth: '1%',
+    borderColor: 'lightgray',
+  },
   button: {
     borderWidth: '1%',
     borderRadius: '100%',
@@ -77,6 +116,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
   },
+  buttonText: {
+    color: 'white',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    fontSize: '17%',
+}
 });
 
 export default SignUpEmail;
+
