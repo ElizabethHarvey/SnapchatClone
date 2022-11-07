@@ -48,20 +48,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   login: {
-    fontSize: '20%',
     alignSelf: 'center',
-    top: '5.5%',
+    fontSize: '23%',
+    top: '10%',
   },
   username: {
-    top: '11%',
-    left: '10%',
-    letterSpacing: '1%',
+    top: '19%',
+    left: '13%',
     color: 'gray',
     fontSize: '12%',
   },
   textInput1: {
-    top: '13%',
-    left: '10%',
+    top: '21%',
+    left: '13%', 
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
   },
@@ -79,11 +78,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    top: '6%',
+    top: '10%',
     alignSelf: 'center',
   },
   text2: {
-    top: '6.3%',
+    top: '10.5%',
     alignSelf: 'center',
   },
 });

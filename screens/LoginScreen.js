@@ -19,13 +19,13 @@ const LoginScreen = ({ navigation }) => {
   const login = () => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        console.log(auth.currentUser);
+      .then(userCredentials => {
+        const user = userCredentials.user;
+        console.log('Logged in with', user.email);
       })
-      .then(() => {
-        navigation.navigate('AppNav');
-      });
+      .catch(error => alert(error.message));
   };
+
 
   return (
     <SafeAreaView style={styles.container}>
