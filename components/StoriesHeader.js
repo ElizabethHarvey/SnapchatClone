@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   topIcons: {
     top: 5,
-    marginBottom: 50,
+    marginBottom: 70,
     flex: 1,
   },
   profilePic: {
@@ -70,10 +70,10 @@ const styles = StyleSheet.create({
     top: 10,
   },
   dots: {
+    backgroundColor: '#E7E6E6',
     borderRadius: '100%',
     width: 45,
     height: 45,
-    backgroundColor: '#E7E6E6',
     alignItems: 'center',
     justifyContent: 'center',
     top: 10,
