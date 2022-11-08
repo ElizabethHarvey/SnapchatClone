@@ -32,15 +32,16 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignItems: 'center',
-    top: '25%',
+    top: 140,
   },
   login: {
     backgroundColor: '#EE4850',
     alignSelf: 'center',
-    marginTop: '156%',
+    bottom: '8.5%',
     width: '100%',
     height: '8.5%',
     justifyContent: 'center',
+    position: 'absolute',
   },
   loginText: {
     alignSelf: 'center',
@@ -52,8 +53,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#3DACF2',
     alignSelf: 'center',
     width: '100%',
-    height: '10%',
+    height: '9%',
     justifyContent: 'center',
+    bottom: 0,
+    position: 'absolute',
   },
   signUpText: {
     alignSelf: 'center',
