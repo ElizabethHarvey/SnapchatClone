@@ -38,7 +38,7 @@ const SignUpEmail = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={{ left: '5%' }}>
+        <TouchableOpacity style={{ left: '5%', top: '3%' }}>
           <Ionicons
             name='chevron-back-outline'
             size='30%'
