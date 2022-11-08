@@ -18,7 +18,7 @@ const SignUpScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={{ left: '5%' }}>
+      <TouchableOpacity style={{ left: '5%', top: '3%' }}>
         <Ionicons
           name='chevron-back-outline'
           size='30%'
@@ -26,7 +26,7 @@ const SignUpScreen = ({ navigation }) => {
           onPress={() => navigation.navigate('OnBoard')}
         />
       </TouchableOpacity>
-      <Text style={styles.login}>What's your name?</Text>
+      <Text style={styles.title}>What's your name?</Text>
       <Text style={styles.username}>FIRST NAME</Text>
       <TextInput
         style={styles.textInput1}
@@ -49,12 +49,11 @@ const SignUpScreen = ({ navigation }) => {
         />
       </View>
       <Text style={styles.text}>
-        By tapping Sign Up & Accept, you acknowledge that
+        By tapping Sign Up & Accept, you acknowledge that you have read the{' '}
+        <Text style={{ color: 'skyblue' }}>Privacy Policy</Text> and agree to
+        the{' '}
+        <Text style={{ color: 'skyblue' }}>Terms of Service.</Text>
       </Text>
-      <Text style={styles.text2}>
-        you have read the Privacy Policy and agree to the
-      </Text>
-      <Text style={styles.text3}>Terms of Service.</Text>
     </SafeAreaView>
   );
 };
@@ -63,8 +62,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  login: {
-    fontSize: '20%',
+  title: {
+    fontSize: '23%',
     alignSelf: 'center',
     top: '5.5%',
   },
@@ -109,14 +108,7 @@ const styles = StyleSheet.create({
   text: {
     top: '11%',
     left: '10%',
-  },
-  text2: {
-    top: '11%',
-    left: '10%',
-  },
-  text3: {
-    top: '11%',
-    left: '10%',
+    width: '80%',
   },
 });
 export default SignUpScreen;
