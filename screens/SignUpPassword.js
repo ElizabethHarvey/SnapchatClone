@@ -37,7 +37,7 @@ const SignUpPassword = ({ navigation }) => {
           <Button
             title='Continue'
             color='white'
-            onPress={() => navigation.navigate('Email')}
+            onPress={() => navigation.navigate('User')}
           />
         </View>
     </SafeAreaView>
