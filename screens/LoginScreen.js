@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { auth } from '../firebase';
 
@@ -16,21 +16,30 @@ const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        navigation.replace('AppNav')
+      }
+    })
+
+    return unsubscribe
+  }, [])
+
   const login = () => {
     auth
       .signInWithEmailAndPassword(email, password)
-      .then(userCredentials => {
-        const user = userCredentials.user;
-        console.log('Logged in with', user.email);
-      })
-      .catch(error => alert(error.message));
+   .then(userCredentials => {
+    const user = userCredentials.user;
+    console.log('Logged in with', user.email);
+  })
+  .catch(error => alert(error.message));
   };
 
 
   return (
     <SafeAreaView style={styles.container}>
-      <KeyboardAvoidingView enabled={false}>
-        <TouchableOpacity style={{ left: '5%' }}>
+        <TouchableOpacity style={{ left: '5%', top: '3%' }}>
           <Ionicons
             name='chevron-back-outline'
             size='30%'
@@ -39,7 +48,7 @@ const LoginScreen = ({ navigation }) => {
           />
         </TouchableOpacity>
         <Text style={styles.login}>Log In</Text>
-        <Text style={styles.username}>USERNAME OR EMAIL</Text>
+        <Text style={styles.username}>USERNAME</Text>
         <TextInput
           style={styles.textInput1}
           numberOfLines={1}
@@ -61,8 +70,9 @@ const LoginScreen = ({ navigation }) => {
         <View style={styles.button}>
           <Button title='Log In' color='white' onPress={login} />
         </View>
+        <TouchableOpacity style={{ top: '12%'}}>
         <Text style={styles.forgot}>Forgot your password?</Text>
-      </KeyboardAvoidingView>
+        </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -74,30 +84,30 @@ const styles = StyleSheet.create({
   login: {
     fontSize: '23%',
     alignSelf: 'center',
-    top: '17%',
+    top: '5.5%',
   },
   username: {
-    top: '29%',
+    top: '11%',
     left: '10%',
     letterSpacing: '1%',
-    color: '#828A93',
     fontSize: '12%',
+    color: '#828A93',
   },
   textInput1: {
-    top: '37%',
+    top: '13%',
     left: '10%',
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
   },
   password: {
-    top: '40.5%',
+    top: '14.5%',
     left: '10%',
     letterSpacing: '1%',
-    color: '#828A93',
-    fontSize: '11%',
+    color: 'gray',
+    fontSize: '12%',
   },
   textInput2: {
-    top: '47%',
+    top: '16.5%',
     left: '10%',
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
@@ -105,18 +115,17 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: '1%',
     borderRadius: '100%',
-    width: '55%',
-    height: '17%',
+    width: '60%',
+    height: '6.5%',
     justifyContent: 'center',
-    top: '120%',
+    top: '39%',
     alignSelf: 'center',
-    backgroundColor: '#1FAEE0',
-    borderColor: '#1FAEE0',
+    backgroundColor: '#11ACFA',
+    borderColor: '#11ACFA',
+    fontWeight: 'bold',
   },
   forgot: {
-    top: '15%',
     color: '#0076FE',
-    top: '950%',
     fontSize: '12%',
     alignSelf: 'center',
   },
