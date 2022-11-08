@@ -7,7 +7,7 @@ function Weather(props) {
   return (
     <TouchableOpacity style={styles.container}>
       <View
-        style={{ flexDirection: 'row', alignItems: 'center', right: '76%' }}
+        style={{ justifyContent: 'center', flexDirection: 'row', alignSelf: 'center', right: 70 }}
       >
         <FontAwesome
           name='cloud'
@@ -16,7 +16,7 @@ function Weather(props) {
           style={styles.cloud}
         />
         <Ionicons name='chatbox' size={20} color='#E7E6E6' />
-        <View style={{ right: '33%', bottom: '0.3%' }}>
+        <View style={{ right: 17, top: 2 }}>
           <Ionicons name='happy-outline' size={13} color='black' />
         </View>
         <Text style={styles.weather}>Weather</Text>
@@ -35,9 +35,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#6c6c6c',
     padding: '1%',
     borderRadius: '20%',
-    width: '97%',
-    left: '1.5%',
-    alignItems: 'center',
+    width: 420,
+    alignSelf: 'center',
   },
   weather: {
     color: 'white',
@@ -45,38 +44,45 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     paddingRight: '1%',
     right: '15%',
+    top: 10,
   },
   dot: {
     color: 'lightgray',
     fontSize: '5%',
+    top: 10,
   },
   news: {
     color: 'lightgray',
     fontSize: '13%',
     fontWeight: 'bold',
+    top: 10,
   },
   time: {
     color: 'lightgray',
     fontSize: '13%',
     fontWeight: 'bold',
-    left: '270%',
+    left: 130,
+    top: 10,
   },
   text: {
     color: 'lightgray',
     fontSize: '15%',
     fontWeight: 'bold',
-    bottom: '18%',
+    bottom: '20%',
+    left: 4,
+    alignSelf: 'center',
   },
   text2: {
     color: 'lightgray',
     fontSize: '15%',
     fontWeight: 'bold',
-    right: '1.5%',
-    bottom: '18%',
+    right: 1,
+    bottom: '20%',
+    alignSelf: 'center',
   },
   cloud: {
-    right: '10%',
-    top: '5%',
+    right: 5,
+    top: 20,
   },
 });
 
