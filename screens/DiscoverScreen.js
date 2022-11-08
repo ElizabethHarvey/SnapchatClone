@@ -19,7 +19,7 @@ function DiscoverScreen(props) {
             flexDirection: 'row',
             justifyContent: 'space-between',
             alignItems: 'center',
-            bottom: '2%',
+            left: 10,
           }}
         >
           <Text style={styles.Date}>Sunday, May 24</Text>
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     fontSize: '21%',
     fontWeight: 'bold',
     color: 'white',
-    left: '2%',
+    left: 17,
     marginTop: '2%',
   },
   Date: {
