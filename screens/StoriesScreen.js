@@ -34,7 +34,7 @@ function StoriesScreen(props) {
 
 const styles = StyleSheet.create({
   subText: {
-    left: '20%',
+    left: 15,
     marginTop: '2%',
     marginBottom: '3%',
     fontWeight: 'bold',
@@ -45,21 +45,21 @@ const styles = StyleSheet.create({
     bottom: '3%',
     fontWeight: 'bold',
     fontSize: 20,
-    left: '20%',
+    left: 15,
     color: 'lightgrey',
   },
   ForYou: {
     fontWeight: 'bold',
     fontSize: 20,
-    left: '5%',
+    left: 15,
     bottom: '0.5%',
   },
   text: {
-    marginTop: '5%',
+    marginTop: '1%',
     marginBottom: '3%',
     fontWeight: 'bold',
     fontSize: 20,
-    left: 10,
+    left: 15,
   },
 });
 
