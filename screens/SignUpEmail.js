@@ -10,67 +10,68 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { auth } from '../firebase';
+import { auth, usersCollection } from '../firebase';
 
 const SignUpEmail = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(user => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
-        navigation.replace("Email");
+        navigation.replace('User');
       }
-    })
+    });
 
-    return unsubscribe
-  }, [])
-  
-  const SignUp = () => {
+    return unsubscribe;
+  }, []);
+
+  const handleSignUp = () => {
     auth
-    .createUserWithEmailAndPassword(email, password)
-    .then(userCredentials => {
-      const user = userCredentials.user;
-      console.log('Registered with:', user.email);
-    })
-    .catch(error => alert(error.message))
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        usersCollection.doc(auth.currentUser.uid).set({
+          Email: email,
+        })
+        console.log('Registered with:', email);
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
     <SafeAreaView style={styles.container}>
-        <TouchableOpacity style={{ left: '5%', top: '3%' }}>
-          <Ionicons
-            name='chevron-back-outline'
-            size='30%'
-            color='#11ACFA'
-            onPress={() => navigation.navigate('User')}
-          />
-        </TouchableOpacity>
-        <Text style={styles.title}>What's your email?</Text>
-        <Text style={styles.email}>EMAIL</Text>
-        <TextInput
-          style={styles.textInput1}
-          numberOfLines={1}
-          width='80%'
-          maxLength={50}
-          keyboardType='email-address'
-          onChange={text => setEmail(text)}
-          value={email}
+      <TouchableOpacity style={{ left: '5%', top: '3%' }}>
+        <Ionicons
+          name='chevron-back-outline'
+          size='30%'
+          color='#11ACFA'
+          onPress={() => navigation.navigate('User')}
         />
-          <TextInput
-          style={styles.textInput2}
-          numberOfLines={1}
-          width='80%'
-          maxLength={50}
-          keyboardType='email-address'
-          onChange={text => setPassword(text)}
-          value={password}
-        />
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}onPress={SignUp}>
-            Continue
-          </Text>
-        </TouchableOpacity>
+      </TouchableOpacity>
+      <Text style={styles.title}>Set your email and password?</Text>
+      <Text style={styles.email}>EMAIL</Text>
+      <TextInput
+        style={styles.textInput1}
+        numberOfLines={1}
+        width='80%'
+        maxLength={50}
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+      />
+      <Text style={styles.username}>PASSWORD</Text>
+      <TextInput
+        style={styles.textInput2}
+        numberOfLines={1}
+        width='80%'
+        maxLength={50}
+        onChangeText={(text) => setPassword(text)}
+        value={password}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+        <Text style={styles.buttonText}>
+          Sign up & Accept
+        </Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
@@ -121,8 +122,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'center',
     fontSize: '17%',
-}
+  },
+  username: {
+    top: '23%',
+    left: '10%',
+    letterSpacing: '1%',
+    color: 'gray',
+    fontSize: '12%',
+  },
 });
 
 export default SignUpEmail;
-
