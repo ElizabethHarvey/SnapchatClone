@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    top: '18%',
+    top: 70,
   },
   search: {
     position: 'absolute',
@@ -232,6 +232,6 @@ const styles = StyleSheet.create({
   flash: {
     position: 'absolute',
     right: '4%',
-    top: 25,
+    top: 20,
   },
 });
