@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginBottom: '3%',
     fontWeight: 'bold',
     fontSize: 20,
-    left: '3%',
+    left: 10,
   },
 });
 
