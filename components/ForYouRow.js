@@ -27,14 +27,13 @@ const ForYouRow = ({ image, title, time }) => {
 
 const styles = StyleSheet.create({
   row: {
-    padding: '0.5%',
-    marginBottom: '1.5%',
+    padding: 5,
   },
   image: {
     width: 200,
     height: 275,
     borderRadius: '10%',
-    left: '5%',
+    left: 5,
   },
   name: {
     left: '8%',
