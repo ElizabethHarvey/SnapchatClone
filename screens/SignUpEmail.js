@@ -32,11 +32,10 @@ const SignUpEmail = ({ navigation }) => {
       .then(() => {
         usersCollection.doc(auth.currentUser.uid).set({
           Email: email,
-        })
-        console.log('Registered with:', email);
+          Last_Known_Password: password,
+        });
       })
-      .catch((error) => alert(error.message));
-  };
+    }
 
   return (
     <SafeAreaView style={styles.container}>
