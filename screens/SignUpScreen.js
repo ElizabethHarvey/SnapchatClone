@@ -7,14 +7,35 @@ import {
   Button,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { auth, usersCollection } from '../firebase';
 
 const SignUpScreen = ({ navigation }) => {
-  const [email, userEmail] = useState();
-  const [password, userPassword] = useState();
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
 
-  const signUp = () => {};
+  const update = {
+    displayFirstName: firstName,
+    displayLastName: lastName,
+  };
+
+  const addName = () => {
+    auth.currentUser
+    .updateProfile(update)
+    .then(() => {
+      usersCollection
+        .doc(auth.currentUser.uid)
+        .update({
+          FirstName: firstName,
+          LastName: lastName,
+        })
+        .then(() => {
+          console.log('success');
+        });
+    })
+    .then(() => navigation.navigate('Birthday'))
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,7 +44,7 @@ const SignUpScreen = ({ navigation }) => {
           name='chevron-back-outline'
           size='30%'
           color='#11ACFA'
-          onPress={() => navigation.navigate('OnBoard')}
+          onPress={() => navigation.navigate('Email')}
         />
       </TouchableOpacity>
       <Text style={styles.title}>What's your name?</Text>
@@ -33,6 +54,8 @@ const SignUpScreen = ({ navigation }) => {
         numberOfLines={1}
         width='80%'
         maxLength={58}
+        value={firstName}
+        onChangeText={(text) => setFirstName(text)}
       />
       <Text style={styles.password}>LAST NAME</Text>
       <TextInput
@@ -40,12 +63,14 @@ const SignUpScreen = ({ navigation }) => {
         numberOfLines={1}
         width='80%'
         maxLength={58}
+        value={lastName}
+        onChangeText={(text) => setLastName(text)}
       />
       <View style={styles.button}>
         <Button
           title='Sign Up & Accept'
           color='white'
-          onPress={() => navigation.navigate('Birthday')}
+          onPress={addName}
         />
       </View>
       <Text style={styles.text}>
