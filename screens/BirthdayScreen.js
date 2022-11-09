@@ -9,12 +9,40 @@ import {
   View,
 } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { auth, usersCollection } from '../firebase';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 function BirthdayScreen({ navigation }) {
   const [date, setDate] = useState(new Date('October 18, 2022'));
   const [mode, setMode] = useState('date');
   const [show, setShow] = useState(false);
   const [showIos, setShowIos] = useState(false);
+
+  const update = {
+    displayDate: date,
+  };
+
+  const addBirthday = () => {
+    auth.currentUser
+      .updateProfile(update)
+      .then(() => {
+        usersCollection
+          .doc(auth.currentUser.uid)
+          .update({
+            Birthday:
+              date.getMonth() +
+              1 +
+              '/' +
+              date.getDate() +
+              '/' +
+              date.getFullYear().toString(),
+          })
+          .then(() => {
+            console.log('success');
+          });
+      })
+      .then(() => navigation.navigate('User'));
+  };
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate;
@@ -52,12 +80,17 @@ function BirthdayScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
+      <TouchableOpacity style={{ left: '5%', top: '3%' }}>
+        <Ionicons
+          name='chevron-back-outline'
+          size='30%'
+          color='#11ACFA'
+          onPress={() => navigation.navigate('Sign')}
+        />
+      </TouchableOpacity>
       <Text style={styles.title}>When's your birthday?</Text>
       <Text style={styles.birthday}>BIRTHDAY</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Email')}
-      >
+      <TouchableOpacity style={styles.button} onPress={addBirthday}>
         <Text style={styles.signUpText}>Continue</Text>
       </TouchableOpacity>
       {Platform.OS === 'android' ? (
