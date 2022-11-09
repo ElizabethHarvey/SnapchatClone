@@ -56,7 +56,7 @@ function BirthdayScreen({ navigation }) {
       <Text style={styles.birthday}>BIRTHDAY</Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate('User')}
+        onPress={() => navigation.navigate('Email')}
       >
         <Text style={styles.signUpText}>Continue</Text>
       </TouchableOpacity>
