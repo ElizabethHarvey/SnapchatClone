@@ -17,26 +17,17 @@ import username from './SignUpUsername'
 const SignUpEmail = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        navigation.replace('User');
-      }
-    });
 
-    return unsubscribe;
-  }, []);
-
-  const handleSignUp = () => {
+  const addSignUp = () => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
         usersCollection.doc(auth.currentUser.uid).set({
           Email: email,
-          Last_Known_Password: password,
+          Password: password,
         });
       })
+      .then(() => navigation.navigate('Sign'))
     }
 
   return (
@@ -46,7 +37,7 @@ const SignUpEmail = ({ navigation }) => {
           name='chevron-back-outline'
           size='30%'
           color='#11ACFA'
-          onPress={() => navigation.navigate('User')}
+          onPress={() => navigation.navigate('OnBoard')}
         />
       </TouchableOpacity>
       <Text style={styles.title}>Set your email and password?</Text>
@@ -69,7 +60,7 @@ const SignUpEmail = ({ navigation }) => {
         value={password}
       />
   
-      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+      <TouchableOpacity style={styles.button} onPress={addSignUp}>
         <Text style={styles.buttonText}>
           Sign up & Accept
         </Text>
