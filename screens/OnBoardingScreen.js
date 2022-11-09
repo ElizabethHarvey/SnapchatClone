@@ -17,7 +17,7 @@ function OnBoardingScreen({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.signUp}
-        onPress={() => navigation.navigate('Sign')}
+        onPress={() => navigation.navigate('Email')}
       >
         <Text style={styles.signUpText}>SIGN UP</Text>
       </TouchableOpacity>
