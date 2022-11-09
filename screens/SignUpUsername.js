@@ -32,6 +32,7 @@ const SignUpUsername = ({ navigation }) => {
           console.log('success');
         });
     })
+    .then(() => navigation.navigate('AppNav'))
   };
 
   return (
