@@ -10,8 +10,29 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { auth, usersCollection } from '../firebase';
 
 const SignUpPassword = ({ navigation }) => {
+  const [password, setPassword] = useState('');
+
+  const update = {
+    displayPassword: password,
+  };
+
+  const addPassword = () => {
+    auth.currentUser
+    .updateProfile(update)
+    .then(() => {
+      usersCollection
+        .doc(auth.currentUser.uid)
+        .update({
+          Password: password,
+        })
+        .then(() => {
+          console.log('success');
+        });
+    })
+  };
   return (
     <SafeAreaView style={styles.container}>
         <TouchableOpacity style={{ left: '5%', top: '3%' }}>
@@ -19,7 +40,7 @@ const SignUpPassword = ({ navigation }) => {
             name='chevron-back-outline'
             size='30%'
             color='#11ACFA'
-            onPress={() => navigation.navigate('Email')}
+            onPress={() => navigation.navigate('User')}
           />
         </TouchableOpacity>
         <Text style={styles.login}>Set a password</Text>
@@ -32,12 +53,14 @@ const SignUpPassword = ({ navigation }) => {
           width='80%'
           maxLength={15}
           secureTextEntry={true}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
         />
         <View style={styles.button}>
           <Button
             title='Continue'
             color='white'
-            onPress={() => navigation.navigate('User')}
+            onPress={addPassword}
           />
         </View>
     </SafeAreaView>
