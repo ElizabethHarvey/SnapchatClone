@@ -12,10 +12,12 @@ import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { auth, usersCollection } from '../firebase';
 
+import username from './SignUpUsername'
+
 const SignUpEmail = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
+  
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
@@ -57,7 +59,7 @@ const SignUpEmail = ({ navigation }) => {
         onChangeText={(text) => setEmail(text)}
         value={email}
       />
-      <Text style={styles.username}>PASSWORD</Text>
+      <Text style={styles.password}>PASSWORD</Text>
       <TextInput
         style={styles.textInput2}
         numberOfLines={1}
@@ -66,6 +68,7 @@ const SignUpEmail = ({ navigation }) => {
         onChangeText={(text) => setPassword(text)}
         value={password}
       />
+  
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
         <Text style={styles.buttonText}>
           Sign up & Accept
@@ -103,6 +106,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: '1%',
     borderColor: 'lightgray',
   },
+  textInput3: {
+    top: '29%',
+    left: '10%',
+    borderBottomWidth: '1%',
+    borderColor: 'lightgray',
+  },
   button: {
     borderWidth: '1%',
     borderRadius: '100%',
@@ -123,6 +132,13 @@ const styles = StyleSheet.create({
     fontSize: '17%',
   },
   username: {
+    top: '27%',
+    left: '10%',
+    letterSpacing: '1%',
+    color: 'gray',
+    fontSize: '12%',
+  },
+  password: {
     top: '23%',
     left: '10%',
     letterSpacing: '1%',
