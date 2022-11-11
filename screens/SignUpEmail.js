@@ -12,7 +12,6 @@ import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { auth, usersCollection } from '../firebase';
 
-import username from './SignUpUsername'
 
 const SignUpEmail = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -27,7 +26,7 @@ const SignUpEmail = ({ navigation }) => {
           Password: password,
         });
       })
-      .then(() => navigation.navigate('Sign'))
+      .then(() => navigation.navigate('Name'))
     }
 
   return (

@@ -85,7 +85,7 @@ function BirthdayScreen({ navigation }) {
           name='chevron-back-outline'
           size='30%'
           color='#11ACFA'
-          onPress={() => navigation.navigate('Sign')}
+          onPress={() => navigation.navigate('Name')}
         />
       </TouchableOpacity>
       <Text style={styles.title}>When's your birthday?</Text>
