@@ -21,7 +21,7 @@ const SignUpEmail = ({ navigation }) => {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        usersCollection.doc(auth.currentUser.uid).set({
+        usersCollection.doc(auth.currentUser.email).set({
           Email: email,
           Password: password,
         });
