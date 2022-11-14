@@ -27,7 +27,7 @@ function BirthdayScreen({ navigation }) {
       .updateProfile(update)
       .then(() => {
         usersCollection
-          .doc(auth.currentUser.uid)
+          .doc(auth.currentUser.email)
           .update({
             Birthday:
               date.getMonth() +
