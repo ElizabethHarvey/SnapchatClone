@@ -57,6 +57,7 @@ const SignUpEmail = ({ navigation }) => {
         maxLength={50}
         onChangeText={(text) => setPassword(text)}
         value={password}
+        secureTextEntry={true}
       />
   
       <TouchableOpacity style={styles.button} onPress={addSignUp}>
