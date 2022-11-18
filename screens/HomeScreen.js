@@ -1,17 +1,31 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  Modal,
+  Pressable,
+  Button,
+  Platform,
+  TextInput,
+} from 'react-native';
 import { Camera, CameraType } from 'expo-camera';
 import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { auth } from '../firebase';
 
 import ImageModal from '../components/ImageModal';
-import { auth } from '../firebase';
+import MyStory from '../components/MyStory';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [image, setImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
+  const [newDreamModalVisible, setNewDreamModalVisible] = useState(false);
+
   const cameraRef = useRef(null);
 
   console.log(auth.currentUser);
@@ -54,6 +68,78 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.cameraContainer}>
+      <Modal
+        style={styles.modal}
+        animationType='fade'
+        visible={newDreamModalVisible}
+        onRequestClose={() => setNewDreamModalVisible(false)}
+      >
+        <View style={styles.modalView}>
+          <View
+            style={{ flexDirection: 'row', justifyContent: 'space-between' }}
+          >
+            <TouchableOpacity
+              style={styles.arrow}
+              onPress={() => setNewDreamModalVisible(false)}
+            >
+              <Ionicons name='chevron-down-outline' size={30} color='black' />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.cog}>
+              <Ionicons name='cog' size={30} color='black' />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
+              resizeMode: 'contain',
+              alignItems: 'center',
+              borderWidth: '3%',
+              borderRadius: '25%',
+              marginLeft: '33%',
+              marginRight: '34%'
+            }}
+          >
+            <Image
+              source={require('../assets/pfp.png')}
+              style={{ width: 140, height: 141, }}
+            />
+          </View>
+          <View style={{alignItems: 'center', top: '1%',}}>
+            <Text style={styles.name}>Stacy Brown</Text>
+          </View>
+          <View style={{ top: '3%', flexDirection: 'row',  justifyContent: 'center', alignItems: 'center'}}>
+            <Text style={styles.username}> stacyb </Text>
+            <Text style={styles.dot}> ● </Text>
+            <Text style={styles.snapScore}> 23,232 </Text>
+            <Text> ♌ </Text>
+          </View>
+          <View style={{ top: '8%', left: '1%', flexDirection: 'row' }}>
+          <Text style={{ fontSize: 20, fontWeight: '600' }}>Stories</Text>
+          <View
+            style={{
+              top: '3%',
+              right: '4%',
+              flexDirection: 'row',
+              position: 'absolute',
+              backgroundColor: '#E8E8E8',
+              width: '25%',
+              alignItems: 'center',
+              borderRadius: '10%',
+              height: '110%',
+            }}
+          >
+            <Ionicons
+              name="add"
+              size={20}
+              style={{ left: '20%', color: '#4FAAF9' }}
+            />
+            <Text style={{ fontSize: 15, fontWeight: '600', left: '20%' }}>
+              New Story
+            </Text>
+          </View>
+        </View>
+        <MyStory/>
+        </View>
+      </Modal>
       {!image ? (
         <Camera
           style={styles.camera}
@@ -64,7 +150,7 @@ export default function HomeScreen({ navigation }) {
           <View style={styles.Header}>
             <TouchableOpacity
               style={styles.profilePic}
-              onPress={() => navigation.navigate('')}
+              onPress={() => setNewDreamModalVisible(true)}
             >
               <Image
                 source={{ uri: 'https://picsum.photos/200/300' }}
@@ -233,5 +319,54 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: '4%',
     top: 20,
+  },
+  modal: {
+    flex: 1,
+  },
+  modalView: {
+    flex: 1,
+    backgroundColor: '#F5F5F5'
+  },
+  Text: {
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    bottom: 20,
+  },
+  arrow: {
+    top: 10,
+    marginBottom: 15,
+    left: '40%',
+  },
+  cog: {
+    top: 10,
+    marginBottom: 15,
+    right: '40%',
+  },
+  name: {
+    top: '2%',
+    fontSize: 23,
+    fontWeight: 'bold',
+    color: '#3a3b3c',
+  },
+  username: {
+    color: '#3a3b3c',
+  },
+  dot: {
+    color: '#d3d3d3',
+    fontSize: 5,
+  },
+  snapScore: {
+    color: '#3a3b3c',
+  },
+  stories: {
+    fontSize: '20%',
+    color: '#3a3b3c',
+    fontWeight: 'bold',
+  },
+  newStory: {
+    fontSize: '15%',
+    width: 95,
+    height: 26,
+    backgroundColor: '#f0f0f0',
   },
 });
