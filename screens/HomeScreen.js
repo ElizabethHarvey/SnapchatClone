@@ -18,6 +18,7 @@ import { auth } from '../firebase';
 
 import ImageModal from '../components/ImageModal';
 import MyStory from '../components/MyStory';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -74,7 +75,7 @@ export default function HomeScreen({ navigation }) {
         visible={newDreamModalVisible}
         onRequestClose={() => setNewDreamModalVisible(false)}
       >
-        <View style={styles.modalView}>
+        <SafeAreaView style={styles.modalView}>
           <View
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}
           >
@@ -112,11 +113,10 @@ export default function HomeScreen({ navigation }) {
             <Text style={styles.snapScore}> 23,232 </Text>
             <Text> ♌ </Text>
           </View>
-          <View style={{ top: '8%', left: '1%', flexDirection: 'row' }}>
+          <View style={{ top: '9%', left: '1%', flexDirection: 'row' }}>
           <Text style={{ fontSize: 20, fontWeight: '600' }}>Stories</Text>
           <View
             style={{
-              top: '3%',
               right: '4%',
               flexDirection: 'row',
               position: 'absolute',
@@ -138,7 +138,7 @@ export default function HomeScreen({ navigation }) {
           </View>
         </View>
         <MyStory/>
-        </View>
+        </SafeAreaView>
       </Modal>
       {!image ? (
         <Camera
@@ -320,12 +320,9 @@ const styles = StyleSheet.create({
     right: '4%',
     top: 20,
   },
-  modal: {
-    flex: 1,
-  },
   modalView: {
     flex: 1,
-    backgroundColor: '#F5F5F5'
+    backgroundColor: '#F5F5F5',
   },
   Text: {
     fontWeight: 'bold',
@@ -333,12 +330,12 @@ const styles = StyleSheet.create({
     bottom: 20,
   },
   arrow: {
-    top: 10,
+    marginTop: 40,
     marginBottom: 15,
     left: '40%',
   },
   cog: {
-    top: 10,
+    marginTop: 40,
     marginBottom: 15,
     right: '40%',
   },
