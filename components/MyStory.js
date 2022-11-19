@@ -1,18 +1,18 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const MyStory = () => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Text style={styles.myStory}>My Story</Text>
-      <View style={styles.image}>
+      <TouchableOpacity style={styles.image}>
         <Image
           source={{ uri: 'https://picsum.photos/200/300' }}
           style={{ width: 40, height: 40, borderRadius: '100%' }}
         />
-      </View>
-      <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
         <Ionicons style={styles.eye} name='eye' color='#C8C8C8' size='20%' />
         <Text style={styles.views}>123</Text>
         <Ionicons
@@ -28,8 +28,8 @@ const MyStory = () => {
           size='20%'
         />
         <Text style={styles.reopen}>6</Text>
-      </View>
-      <View style={{ justifyContent: 'center', bottom: '15%' }}>
+      </TouchableOpacity>
+      <TouchableOpacity style={{ justifyContent: 'center', bottom: '15%' }}>
         <Ionicons
           style={styles.download}
           name='download-outline'
@@ -42,8 +42,8 @@ const MyStory = () => {
           color='#C8C8C8'
           size='30%'
         />
-      </View>
-    </View>
+      </TouchableOpacity>
+    </TouchableOpacity>
   );
 };
 
@@ -53,16 +53,16 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     alignItems: 'center',
-    top: '37.5%',
-    backgroundColor: '#fff',
+    top: '100%',
+    backgroundColor: '#FFFFFF',
     width: '95%',
-    height: '7%',
+    height: '20%',
     borderRadius: '15%',
     position: 'absolute',
   },
   myStory: {
     fontSize: '15%',
-    color: 'black',
+    color: '#484848',
     position: 'absolute',
     left: '20%',
     top: '20%',
