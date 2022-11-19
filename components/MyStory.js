@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   container: {
     alignSelf: 'center',
     alignItems: 'center',
-    top: '33%',
+    top: '37.5%',
     backgroundColor: '#fff',
     width: '95%',
     height: '7%',
