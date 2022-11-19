@@ -10,7 +10,9 @@ import {
   Button,
   Platform,
   TextInput,
+  ScrollView,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Camera, CameraType } from 'expo-camera';
 import * as MedialLibrary from 'expo-media-library';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -18,7 +20,9 @@ import { auth } from '../firebase';
 
 import ImageModal from '../components/ImageModal';
 import MyStory from '../components/MyStory';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import Friends from '../components/AddFriends';
+import MyFriends from '../components/MyFriends';
+import BitmojiCards from '../components/BitmojiCards';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -66,6 +70,9 @@ export default function HomeScreen({ navigation }) {
   if (hasCameraPermission === false) {
     return <Text>Permission Denied</Text>;
   }
+  const ListFooter = () => {
+    return <View style={styles.headerFooterStyle}></View>;
+  };
 
   return (
     <View style={styles.cameraContainer}>
@@ -75,7 +82,7 @@ export default function HomeScreen({ navigation }) {
         visible={newDreamModalVisible}
         onRequestClose={() => setNewDreamModalVisible(false)}
       >
-        <SafeAreaView style={styles.modalView}>
+        <ScrollView ListFooterComponent={ListFooter} style={styles.modalView}>
           <View
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}
           >
@@ -96,49 +103,80 @@ export default function HomeScreen({ navigation }) {
               borderWidth: '3%',
               borderRadius: '25%',
               marginLeft: '33%',
-              marginRight: '34%'
+              marginRight: '34%',
             }}
           >
             <Image
               source={require('../assets/pfp.png')}
-              style={{ width: 140, height: 141, }}
+              style={{ width: 140, height: 141 }}
             />
           </View>
-          <View style={{alignItems: 'center', top: '1%',}}>
+          <View style={{ alignItems: 'center', top: '1%' }}>
             <Text style={styles.name}>Stacy Brown</Text>
           </View>
-          <View style={{ top: '3%', flexDirection: 'row',  justifyContent: 'center', alignItems: 'center'}}>
+          <View
+            style={{
+              top: '3%',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
             <Text style={styles.username}> stacyb </Text>
             <Text style={styles.dot}> ● </Text>
             <Text style={styles.snapScore}> 23,232 </Text>
             <Text> ♌ </Text>
           </View>
-          <View style={{ top: '9%', left: '1%', flexDirection: 'row' }}>
-          <Text style={{ fontSize: 20, fontWeight: '600' }}>Stories</Text>
-          <View
+          <View style={{ top: '9%', left: '2.3%', flexDirection: 'row' }}>
+            <Text style={{ fontSize: 20, fontWeight: '600' }}>Stories</Text>
+            <View
+              style={{
+                right: '4%',
+                flexDirection: 'row',
+                position: 'absolute',
+                backgroundColor: '#E8E8E8',
+                width: '25%',
+                alignItems: 'center',
+                borderRadius: '10%',
+                height: '110%',
+              }}
+            >
+              <Ionicons
+                name='add'
+                size={20}
+                style={{ left: '20%', color: '#4FAAF9' }}
+              />
+              <Text style={{ fontSize: 15, fontWeight: '600', left: '20%' }}>
+                New Story
+              </Text>
+            </View>
+          </View>
+          <MyStory />
+          <Text
             style={{
-              right: '4%',
-              flexDirection: 'row',
-              position: 'absolute',
-              backgroundColor: '#E8E8E8',
-              width: '25%',
-              alignItems: 'center',
-              borderRadius: '10%',
-              height: '110%',
+              left: '2.3%',
+              fontSize: 20,
+              fontWeight: '600',
+              top: '38%',
             }}
           >
-            <Ionicons
-              name="add"
-              size={20}
-              style={{ left: '20%', color: '#4FAAF9' }}
-            />
-            <Text style={{ fontSize: 15, fontWeight: '600', left: '20%' }}>
-              New Story
-            </Text>
-          </View>
-        </View>
-        <MyStory/>
-        </SafeAreaView>
+            Friends
+          </Text>
+          <Friends />
+          <MyFriends />
+          <Text
+            style={{
+              left: '2.3%',
+              fontSize: 20,
+              fontWeight: '600',
+              top: '121%',
+            }}
+          >
+            Bitmoji
+          </Text>
+            <BitmojiCards title={'Change Outfit'} name='shirt-outline' style={{ top: '123%'}}/>
+            <BitmojiCards title={'Edit Avatar'} name='pencil-outline' style={{ top: '124%'}}/>
+        </ScrollView>
       </Modal>
       {!image ? (
         <Camera
@@ -322,7 +360,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#F8F8F8',
   },
   Text: {
     fontWeight: 'bold',
@@ -365,5 +403,9 @@ const styles = StyleSheet.create({
     width: 95,
     height: 26,
     backgroundColor: '#f0f0f0',
+  },
+  headerFooterStyle: {
+    width: '100%',
+    height: '100%',
   },
 });
