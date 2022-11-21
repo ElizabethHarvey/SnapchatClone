@@ -13,12 +13,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import Header from '../components/ChatHeader';
 import MessageList from '../components/MessageList';
+import SenderMessage from '../components/SenderMessage';
 
 function ChatScreen(props) {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <MessageList />
     </SafeAreaView>
   );
 }
