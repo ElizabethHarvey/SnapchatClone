@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Fontisto } from '@expo/vector-icons';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -7,7 +7,10 @@ function OnBoardingScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.logo}>
-        <Fontisto name='snapchat' size={95} color='white' style={styles.logo} />
+        <Image
+          source={require('../assets/logo.png')}
+          style={{ width: 85, height: 85 }}
+        />
       </View>
       <TouchableOpacity
         style={styles.login}
@@ -32,7 +35,8 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignItems: 'center',
-    top: 140,
+    justifyContent: 'center',
+    top: 260
   },
   login: {
     backgroundColor: '#EE4850',
@@ -48,6 +52,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: '25%',
+    letterSpacing: 3,
   },
   signUp: {
     backgroundColor: '#3DACF2',
@@ -63,6 +68,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: '25%',
+    letterSpacing: 3,
   },
 });
 
