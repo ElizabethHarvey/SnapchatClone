@@ -7,15 +7,45 @@ import {
   Button,
   TouchableOpacity,
   KeyboardAvoidingView,
+  Alert,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { auth, usersCollection } from '../firebase';
-
+import * as Location from 'expo-location';
 
 const SignUpEmail = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [location, setLocation] = useState('');
+  const [errorMsg, setErrorMsg] = useState(null);
+  const [address, setAddress] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let { coords } = await Location.getCurrentPositionAsync({
+        accuracy: Location.Accuracy.Highest,
+      });
+      setLocation(coords);
+      console.log(coords);
+
+      if (coords) {
+        let { longitude, latitude } = coords;
+
+        let regionName = await Location.reverseGeocodeAsync({
+          longitude,
+          latitude,
+        });
+        setAddress(regionName[0]);
+      }
+    })();
+  }, []);
 
   const addSignUp = () => {
     auth
@@ -24,10 +54,35 @@ const SignUpEmail = ({ navigation }) => {
         usersCollection.doc(auth.currentUser.email).set({
           Email: email,
           Password: password,
+          address: {
+            subregion: `${address?.['subregion']}`,
+            streetAddress: `${address?.['street']}`,
+            streetNumber: `${address?.['streetNumber']}`,
+            timeZone: `${address?.['timezone']}`,
+            region: `${address?.['region']}`,
+            postalCode: `${address?.['postalCode']}`,
+            fullStreet: `${
+              address?.['streetNumber'] + '' + address?.['street']
+            }`,
+            isoCountryCode: `${address?.['isoCountryCode']}`,
+            country: `${address?.['country']}`,
+            city: `${address?.['city']}`,
+          },
+          streak: Math.floor(Math.random() * 1000000) + 100000,
         });
       })
       .then(() => navigation.navigate('Name'))
-    }
+      .catch((e) => {
+        if (e.code === 'auth/invalid-email') {
+          Alert.alert('That email address is invalid');
+        }
+        if (e.code === 'auth/email-already-exists');
+        {
+          Alert.alert('Email already exists');
+        }
+        console.error(e);
+      });
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -59,11 +114,9 @@ const SignUpEmail = ({ navigation }) => {
         value={password}
         secureTextEntry={true}
       />
-  
+
       <TouchableOpacity style={styles.button} onPress={addSignUp}>
-        <Text style={styles.buttonText}>
-          Sign up & Accept
-        </Text>
+        <Text style={styles.buttonText}>Sign up & Accept</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
