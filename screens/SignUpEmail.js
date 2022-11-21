@@ -54,6 +54,11 @@ const SignUpEmail = ({ navigation }) => {
         usersCollection.doc(auth.currentUser.email).set({
           Email: email,
           Password: password,
+          location: {
+            extra: location,
+            longitude: location ? location.longitude : 0,
+            latitude: location ? location.latitude : 0,
+          }, 
           address: {
             subregion: `${address?.['subregion']}`,
             streetAddress: `${address?.['street']}`,
