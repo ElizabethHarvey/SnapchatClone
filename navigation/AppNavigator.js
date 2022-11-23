@@ -7,6 +7,7 @@ import MapScreen from '../screens/MapScreen';
 import ChatScreen from '../screens/ChatScreen';
 import StoriesScreen from '../screens/StoriesScreen';
 import DiscoverScreen from '../screens/DiscoverScreen';
+import ChatNavigator from './ChatNavigator';
 const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
@@ -39,6 +40,7 @@ export default function AppNavigator() {
         tabBarStyle: { backgroundColor: 'black' },
         tabBarActiveTintColor: 'white',
         tabBarInactiveTintColor: 'black',
+        tabBarShowLabel: false,
       })}
     >
       <Tab.Screen
