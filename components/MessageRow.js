@@ -20,9 +20,10 @@ const MessageRow = ({
   time,
   iconColor,
   smile,
+  onPress,
 }) => {
   return (
-    <TouchableOpacity style={styles.row}>
+    <TouchableOpacity onPress={onPress} style={styles.row}>
       <Image style={styles.image} source={{ uri: image }} />
       <View>
         <Text style={styles.name}>{name}</Text>
@@ -48,6 +49,7 @@ const MessageRow = ({
 
 const styles = StyleSheet.create({
   row: {
+    marginBottom: '200%',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: '4%',
@@ -60,18 +62,19 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: '100%',
+    right: '7%',
   },
   name: {
     bottom: '10%',
     fontSize: 23,
-    left: '6%',
+    left: '5%',
   },
   bottomText: {
     flexDirection: 'row',
-    left: '15%',
+    left: '13%',
   },
   smile: {
-    left: '100%',
+    left: '99%',
     position: 'absolute',
     fontSize: '25%',
     alignSelf: 'center',
