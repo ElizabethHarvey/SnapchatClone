@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, FlatList, Platform } from 'react-native';
 import MessageRow from './MessageRow';
 
-const MessageList = (navigation) => {
+const MessageList = ({ onPress }) => {
   const DUMMY_DATA = [
     {
       id: 1,
@@ -250,6 +250,7 @@ const MessageList = (navigation) => {
             textColor={item.textColor}
             time={item.time}
             smile={item.smile}
+            onPress={onPress}
           />
         )}
       />
