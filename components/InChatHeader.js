@@ -14,7 +14,6 @@ function InChatHeader({ name, onPress }) {
     <SafeAreaView style={styles.topIcons}>
       <TouchableOpacity style={styles.profilePic}>
         <Image
-          onPress={onPress}
           style={{ width: 32, height: 32, borderRadius: '100%' }}
           source={{
             uri: 'https://picsum.photos/200/300',
@@ -29,7 +28,7 @@ function InChatHeader({ name, onPress }) {
         <Ionicons name='videocam' size={20} color='#000' />
       </TouchableOpacity>
       <TouchableOpacity style={styles.back}>
-        <Ionicons name='chevron-forward' size={30} color='#000' />
+        <Ionicons onPress={onPress} name='chevron-forward' size={30} color='#000' />
       </TouchableOpacity>
     </SafeAreaView>
   );
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomWidth: 1,
     top: '2%',
-    borderColor: '#E7E6E6',
+    borderColor: '#bbbb',
   },
   profilePic: {
     width: 40,
