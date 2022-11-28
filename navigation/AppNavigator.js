@@ -33,8 +33,9 @@ export default function AppNavigator() {
           } else if (route.name === 'Discover') {
             iconName = focused ? 'play-outline' : 'play-outline';
             color = focused ? '#FF0000' : 'gray';
+          } else if (route.name === 'InChat') {
+            return false;
           }
-
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarStyle: { backgroundColor: 'black' },
@@ -46,13 +47,6 @@ export default function AppNavigator() {
       <Tab.Screen
         name='Map'
         component={MapScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name='Chat'
-        component={ChatScreen}
         options={{
           headerShown: false,
         }}
@@ -74,6 +68,13 @@ export default function AppNavigator() {
       <Tab.Screen
         name='Discover'
         component={DiscoverScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name='Chat'
+        component={ChatNavigator}
         options={{
           headerShown: false,
         }}

@@ -17,7 +17,7 @@ import SenderMessage from '../components/SenderMessage';
 import { auth, usersCollection } from '../firebase';
 import MessageRow from '../components/MessageRow';
 
-function ChatScreen(props) {
+function ChatScreen({ navigation }) {
   // const [messages, setMessages] = useState([]);
 
   // useEffect(() => {
@@ -39,19 +39,20 @@ function ChatScreen(props) {
   //     });
   //   return () => subscriber();
   // }, [usersCollection]);
-  
 
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <MessageList onPress={() => navigation.navigate('Header')} />
+      <TouchableOpacity >
+        <MessageList onPress={() => navigation.navigate('InChat')} />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F0EEED',
+    backgroundColor: '#ffff',
     flex: 1,
   },
 });

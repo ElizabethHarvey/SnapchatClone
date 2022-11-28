@@ -1,11 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import InChatHeader from '../components/InChatHeader'
+import SCTextInput from '../components/SCTextInput'
 
-const InChatScreen = () => {
+const InChatScreen = ({ navigation }) => {
   return (
     <View>
-      <InChatHeader name='Team Snapchat' onPress={() => navigation.navigate('Chat')} />
+      <InChatHeader name='Team Snapchat' onPress={() => navigation.goBack('')}/>
+      <SCTextInput />
     </View>
   )
 }
