@@ -6,7 +6,7 @@ const MessageList = ({ onPress }) => {
   const DUMMY_DATA = [
     {
       id: 1,
-      name: 'Daddy',
+      name: 'Team Snapchat',
       streak: '30',
       image: 'https://picsum.photos/200/300',
       title: 'New Snap',
@@ -14,6 +14,7 @@ const MessageList = ({ onPress }) => {
       IconColor: 'red',
       textColor: 'red',
       time: '10m',
+      smile: '😊',
     },
     // {
     //   id: 2,
@@ -25,7 +26,6 @@ const MessageList = ({ onPress }) => {
     //   IconColor: 'purple',
     //   textColor: 'purple',
     //   time: '20m',
-    //   smile: '😊',
     // },
     // {
     //   id: 3,
