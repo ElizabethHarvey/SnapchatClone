@@ -119,7 +119,6 @@ const SignUpEmail = ({ navigation }) => {
         value={password}
         secureTextEntry={true}
       />
-
       <TouchableOpacity style={styles.button} onPress={addSignUp}>
         <Text style={styles.buttonText}>Sign up & Accept</Text>
       </TouchableOpacity>
