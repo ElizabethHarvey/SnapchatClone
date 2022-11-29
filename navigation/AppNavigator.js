@@ -52,6 +52,13 @@ export default function AppNavigator() {
         }}
       />
       <Tab.Screen
+        name='Chat'
+        component={ChatNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
         name='Home'
         component={HomeScreen}
         options={{
@@ -68,13 +75,6 @@ export default function AppNavigator() {
       <Tab.Screen
         name='Discover'
         component={DiscoverScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name='Chat'
-        component={ChatNavigator}
         options={{
           headerShown: false,
         }}
