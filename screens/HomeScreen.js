@@ -174,8 +174,16 @@ export default function HomeScreen({ navigation }) {
           >
             Bitmoji
           </Text>
-            <BitmojiCards title={'Change Outfit'} name='shirt-outline' style={{ top: '123%'}}/>
-            <BitmojiCards title={'Edit Avatar'} name='pencil-outline' style={{ top: '124%'}}/>
+          <BitmojiCards
+            title={'Change Outfit'}
+            name='shirt-outline'
+            style={{ top: '123%' }}
+          />
+          <BitmojiCards
+            title={'Edit Avatar'}
+            name='pencil-outline'
+            style={{ top: '124%' }}
+          />
         </ScrollView>
       </Modal>
       {!image ? (
