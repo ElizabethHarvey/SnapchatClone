@@ -13,12 +13,11 @@ const ChatNavigator = (props) => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: { display: 'none'}
       }}
     >
       <Stack.Screen component={ChatScreen} name='ChatScreen' />
-      <Stack.Screen component={InChatScreen} name='InChat' />
-      <Stack.Screen component={InChatHeader} name='ChatHeader' />
+      <Stack.Screen component={InChatScreen} name='InChat' 
+      options={{ presentation: 'fullScreenModal'}}/>
     </Stack.Navigator>
   );
 };
