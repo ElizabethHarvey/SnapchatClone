@@ -11,13 +11,13 @@ import {
 
 import React from 'react';
 
-function SmileHomeButton({ onPress }) {
+function SmileIcon({ onPress }) {
   return (
     <View>
-      <TouchableOpacity style={styles.happy} onPress={onPress}>
-        <Ionicons name='happy-outline' size={35} color='white' />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={styles.images} onPress={onPress}>
+      <Ionicons name='happy-outline' size={38} color='white' />
+    </TouchableOpacity>
+  </View>
   );
 }
 
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SmileHomeButton;
+export default SmileIcon;
