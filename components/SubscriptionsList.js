@@ -8,7 +8,7 @@ const SubscriptionList = (props) => {
   const DUMMY_DATA = [
     {
       id: 1,
-      title: 'Daddy',
+      title: 'Harmonie Irene',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
@@ -16,13 +16,13 @@ const SubscriptionList = (props) => {
     },
     {
       id: 2,
-      title: 'Mommy',
+      title: 'Emilia',
       image: 'https://picsum.photos/200/300',
       time: 'today',
     },
     {
       id: 3,
-      title: 'Zeke H.',
+      title: 'Deforrest H.',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
@@ -30,14 +30,14 @@ const SubscriptionList = (props) => {
     },
     {
       id: 4,
-      title: 'Ethan H.',
+      title: 'Eliza H.',
       image: 'https://picsum.photos/200/300',
       time: 'today',
       star: '✪',
     },
     {
       id: 5,
-      title: 'Elijah Harvey',
+      title: 'Rozanne',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
     },
@@ -77,7 +77,8 @@ const SubscriptionList = (props) => {
     },
   ];
 
-  return (
+
+  return ( 
     <View>
       <FlatList
         showsHorizontalScrollIndicator={false}
