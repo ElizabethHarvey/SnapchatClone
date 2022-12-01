@@ -21,6 +21,10 @@
 - Authentication 
 - Location
 - DateTimePicker
+- Cross Platform
+- Apple Maps
+- Camera 
+- Photo Saving
 
 #
 # ⏰ Up Coming Functionality
