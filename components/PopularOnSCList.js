@@ -9,7 +9,7 @@ const PopularOnScList = (props) => {
   const DUMMY_DATA = [
     {
       id: 1,
-      title: 'Daddy',
+      title: 'Rozanne',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
@@ -17,13 +17,13 @@ const PopularOnScList = (props) => {
     },
     {
       id: 2,
-      title: 'Mommy',
+      title: 'Kenya',
       image: 'https://picsum.photos/200/300',
       time: 'today',
     },
     {
       id: 3,
-      title: 'Zeke H.',
+      title: 'Lilibeth',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
@@ -31,20 +31,20 @@ const PopularOnScList = (props) => {
     },
     {
       id: 4,
-      title: 'Ethan H.',
+      title: 'Irene H.',
       image: 'https://picsum.photos/200/300',
       time: 'today',
       star: '✪',
     },
     {
       id: 5,
-      title: 'Elijah Harvey',
+      title: 'Harmonie',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
     },
     {
       id: 6,
-      title: 'harvey',
+      title: 'Jerry',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       time: 'today',
@@ -52,31 +52,32 @@ const PopularOnScList = (props) => {
     },
     {
       id: 7,
-      name: 'Zeke',
+      name: 'Iggy',
       image: 'https://picsum.photos/200/300',
       star: '✪',
     },
     {
       id: 8,
-      title: 'Lizzy Harvey',
+      title: 'Elodie',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       star: '✪',
     },
     {
       id: 9,
-      title: 'Ethan Harvey',
+      title: 'Cameron',
       image: 'https://picsum.photos/200/300',
       time: 'today',
     },
     {
       id: 10,
-      title: 'Elijah Harvey',
+      title: 'Lorrin',
       image: 'https://picsum.photos/200/300',
       lock: 'lock-closed',
       star: '✪',
     },
   ];
+
 
   return (
     <View>
