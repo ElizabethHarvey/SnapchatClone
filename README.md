@@ -40,7 +40,7 @@ After the birthday screen is the Username screen feel free not to add a username
 After all the Sign Up screens are done you will be navigated to the home screen of the app where you can take a photo, save it, and turn on and off flash.
 
 #
-# 📃 Liscense
+# 📃 License
 
 MIT License
 
