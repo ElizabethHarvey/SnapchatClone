@@ -1,22 +1,27 @@
 #
-# 📱 SnapchatClone Images
+# 📱 SnapchatClone Showcase
+<p align="middle" float="bottom">
+<img src="https://user-images.githubusercontent.com/97624434/205147410-24057bcb-073e-4f01-aa89-08fb0c55734e.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205147838-82e812a3-5244-42b2-aff1-54a444e03a1f.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205148293-6d7563d1-84d9-4f88-98cc-6ff8b6c157ac.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205148454-24774526-349a-4231-878d-b32d6eb0453d.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205148607-ce2431bd-02fb-4244-a9c2-189074f3ee30.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205148844-e05a93d9-4b3e-43b1-800b-09f505c851f2.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149176-e1c913e5-b7a0-411d-8ccf-1bc4cafdf101.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149311-8363e719-bdc5-487d-b2c3-4207351423e3.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149548-ff4817d1-e418-42aa-af9e-c7f38bb2e01d.png" width="175"> 
+<img src="https://user-images.githubusercontent.com/97624434/205148937-4f3315f4-e3cc-473e-85d6-24320d0c9467.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149767-f25c1196-23d5-4c9f-8354-49cf33210eb2.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149662-a844c5e9-6757-4036-8e46-a4855c617fe4.png" width="175">
+<img src="https://user-images.githubusercontent.com/97624434/205149936-c7f7a6b7-0048-43cb-97e7-31605af585ec.png" width="175">
+</p>
 
-![IMG_0687](https://user-images.githubusercontent.com/97624434/204618254-1b9ed3d7-19f0-4191-b538-b6fe97cb6b92.PNG)
-![IMG_0688](https://user-images.githubusercontent.com/97624434/204618278-079ee38d-cfc2-4559-a12e-b6fc14e2ff93.PNG)
-![IMG_0689](https://user-images.githubusercontent.com/97624434/204618381-0941fe1e-48fc-47ca-919e-eb56aa646b70.PNG)
-![IMG_0690](https://user-images.githubusercontent.com/97624434/204618426-4323a8bf-64bc-400d-b10b-9ee78607aca6.PNG)
-![IMG_0692](https://user-images.githubusercontent.com/97624434/204618466-8b0d1288-1cda-447f-b945-62813bd01f86.PNG)
-![IMG_0693](https://user-images.githubusercontent.com/97624434/204618535-496be9cf-7887-44f3-8a0a-a8a27e249fb1.PNG)
-![IMG_0707](https://user-images.githubusercontent.com/97624434/204629260-658dff8d-c3e3-4e8a-b697-ea87af1f1ab9.PNG)
-![IMG_80ABFD6985A9-1](https://user-images.githubusercontent.com/97624434/204641244-3e891308-f136-4f48-8dcc-b343a37b75bf.jpeg)
-![IMG_0724](https://user-images.githubusercontent.com/97624434/205115603-f9fb8405-533b-48ea-b616-3effd430c4ab.PNG)
-![IMG_135B4AC578A8-1](https://user-images.githubusercontent.com/97624434/204619329-fee51dd1-fb3a-43ca-bd26-d0e1afcfeaae.jpeg)
-![IMG_0699](https://user-images.githubusercontent.com/97624434/204629399-a41da42e-0c59-41be-959d-a6367813edad.PNG)
-![IMG_0700](https://user-images.githubusercontent.com/97624434/204629477-4273e5d3-db3b-457c-a846-4067bc2ab36b.PNG)
+
+
+
 
 #
 # 🛠 Fuctionality
-- Navigation
 - Database
 - Authentication 
 - Location
