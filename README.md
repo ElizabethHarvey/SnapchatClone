@@ -28,6 +28,11 @@
 - Stories
 - Filters
 - Open / Deliver Notice
+- Opened / Delivered notice
+- Profile Customization
+- Discover swapped for Spotlight
+- and more...
+
 
 #
 # 🧠 About
