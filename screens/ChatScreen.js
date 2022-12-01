@@ -43,9 +43,7 @@ function ChatScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <TouchableOpacity >
         <MessageList onPress={() => navigation.navigate('InChat')} />
-      </TouchableOpacity>
     </SafeAreaView>
   );
 }
