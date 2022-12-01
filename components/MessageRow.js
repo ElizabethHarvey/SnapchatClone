@@ -49,7 +49,6 @@ const MessageRow = ({
 
 const styles = StyleSheet.create({
   row: {
-    marginBottom: '200%',
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: '4%',
