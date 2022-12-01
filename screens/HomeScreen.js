@@ -23,6 +23,7 @@ import MyStory from '../components/MyStory';
 import Friends from '../components/AddFriends';
 import MyFriends from '../components/MyFriends';
 import BitmojiCards from '../components/BitmojiCards';
+import SmileModal from '../components/SmileModal';
 
 export default function HomeScreen({ navigation }) {
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
@@ -288,7 +289,7 @@ export default function HomeScreen({ navigation }) {
               <ImageModal />
             </TouchableOpacity>
             <TouchableOpacity style={styles.happy}>
-              <ImageModal />
+              <SmileModal />
             </TouchableOpacity>
           </View>
         )}
