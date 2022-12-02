@@ -16,8 +16,20 @@
 <img src="https://user-images.githubusercontent.com/97624434/205149936-c7f7a6b7-0048-43cb-97e7-31605af585ec.png" width="175">
 </p>
 
-
-
+# 
+# 📦 Packages
+- npx expo install expo-camera 
+- expo install react-native-library
+- yarn add react-native-vector-icons
+- yarn add @react-navigation/native
+- expo install react-native-screens react-native-safe-area-context 
+- yarn add @react-navigation/native-stack
+- yarn add @react-navigation/bottom-tabs
+- yarn add react-native-maps
+- yarn add @react-native-community/datetimepicker
+- Next time use expo install @react-native-community/datetimepicker
+- yarn add firebase@9.7.0
+- yarn add expo-location
 
 
 #
