@@ -18,18 +18,19 @@
 
 # 
 # 📦 Packages
-- npx expo install expo-camera 
-- expo install react-native-library
-- yarn add react-native-vector-icons
-- yarn add @react-navigation/native
-- expo install react-native-screens react-native-safe-area-context 
-- yarn add @react-navigation/native-stack
-- yarn add @react-navigation/bottom-tabs
-- yarn add react-native-maps
-- yarn add @react-native-community/datetimepicker
-- Next time use expo install @react-native-community/datetimepicker
-- yarn add firebase@9.7.0
-- yarn add expo-location
+- expo-camera 
+- react-native-library
+- react-native-vector-icons
+- @react-navigation/native
+- react-native-screens 
+- react-native-safe-area-context 
+- @react-navigation/native-stack
+- @react-navigation/bottom-tabs
+- react-native-maps
+- @react-native-community/datetimepicker
+- @react-native-community/datetimepicker
+- firebase@9.7.0
+- expo-location
 
 
 #
